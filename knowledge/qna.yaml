@@ -1,0 +1,99 @@
+version: 3
+domain: telecomcorp
+document_outline: TelecomCorp proprietary knowledge including FiberLink Pro technology, service tiers, and company policies
+created_by: mrigankapaul
+seed_examples:
+  - context: |
+      TelecomCorp's FiberLink Pro is a proprietary fiber optic technology that uses advanced photonic switching
+      to achieve 25 Gbps symmetric speeds with 99.99% uptime guarantee. Unlike standard fiber, FiberLink Pro
+      uses quantum-encrypted channels and self-healing mesh topology. Installation requires TelecomCorp-certified
+      technicians and specialized equipment including the ProLink Gateway 5000 series.
+    questions_and_answers:
+      - question: What is TelecomCorp's FiberLink Pro technology?
+        answer: |
+          FiberLink Pro is TelecomCorp's proprietary fiber optic technology that uses advanced photonic switching
+          to deliver 25 Gbps symmetric speeds with a 99.99% uptime guarantee.
+      - question: What makes FiberLink Pro different from standard fiber?
+        answer: |
+          FiberLink Pro uses quantum-encrypted channels and self-healing mesh topology, unlike standard fiber.
+          It also requires specialized ProLink Gateway 5000 series equipment.
+      - question: What certification is required to install FiberLink Pro?
+        answer: |
+          Installation requires TelecomCorp-certified technicians who are trained on the specialized equipment
+          and security protocols for FiberLink Pro deployment.
+
+  - context: |
+      TelecomCorp offers three business service tiers: Essential (100 Mbps, 24/7 support, 4-hour SLA),
+      Professional (1 Gbps, dedicated account manager, 2-hour SLA, priority routing), and Enterprise
+      (25 Gbps FiberLink Pro, white-glove service, 30-minute SLA, redundant connections, quantum encryption).
+      Each tier includes TelecomCorp's proprietary CloudShield DDoS protection and NetworkIQ analytics platform.
+    questions_and_answers:
+      - question: What are TelecomCorp's business service tiers?
+        answer: |
+          TelecomCorp offers Essential (100 Mbps, 4-hour SLA), Professional (1 Gbps, 2-hour SLA with dedicated
+          account manager), and Enterprise (25 Gbps FiberLink Pro, 30-minute SLA with white-glove service).
+      - question: What is included with all TelecomCorp business tiers?
+        answer: |
+          All tiers include CloudShield DDoS protection and NetworkIQ analytics platform, along with 24/7 support.
+      - question: What makes the Enterprise tier unique?
+        answer: |
+          Enterprise tier features 25 Gbps FiberLink Pro technology, redundant connections, quantum encryption,
+          white-glove service, and industry-leading 30-minute SLA.
+
+  - context: |
+      TelecomCorp's SmartHome IoT platform integrates with over 500 device types using the proprietary
+      HomeLink protocol. The platform includes intelligent bandwidth allocation (QoS+), automatic device
+      discovery, and TelecomCorp's SecureNode technology for IoT device isolation. Installation requires
+      the HomeLink Hub Pro which costs $199 with $15/month management fee.
+    questions_and_answers:
+      - question: How many devices does TelecomCorp's SmartHome platform support?
+        answer: |
+          TelecomCorp's SmartHome IoT platform integrates with over 500 device types using the proprietary
+          HomeLink protocol.
+      - question: What features are included in TelecomCorp's SmartHome platform?
+        answer: |
+          The platform includes intelligent bandwidth allocation (QoS+), automatic device discovery,
+          and SecureNode technology for IoT device isolation.
+      - question: What is the cost for TelecomCorp's SmartHome setup?
+        answer: |
+          Installation requires the HomeLink Hub Pro which costs $199 upfront with a $15/month management fee.
+
+  - context: |
+      TelecomCorp's Network Operations Center (NOC) uses the proprietary AlertStream system for real-time
+      monitoring. Critical alerts trigger automatic dispatch of field technicians within 15 minutes for
+      Enterprise customers, 45 minutes for Professional, and 2 hours for Essential. The system integrates
+      with TelecomCorp's mobile app to provide customers real-time outage updates and estimated restoration times.
+    questions_and_answers:
+      - question: What monitoring system does TelecomCorp's NOC use?
+        answer: |
+          TelecomCorp's Network Operations Center uses the proprietary AlertStream system for real-time monitoring.
+      - question: How quickly does TelecomCorp dispatch technicians for outages?
+        answer: |
+          Dispatch times are 15 minutes for Enterprise customers, 45 minutes for Professional tier,
+          and 2 hours for Essential tier customers.
+      - question: How do customers receive outage updates?
+        answer: |
+          TelecomCorp's mobile app provides real-time outage updates and estimated restoration times
+          integrated with the AlertStream monitoring system.
+
+  - context: |
+      TelecomCorp's VoiceLink Pro service uses advanced codec compression and AI-powered noise cancellation
+      to deliver HD voice quality over IP networks. The service includes features like SmartTransfer
+      (seamless handoff between devices), ConferenceMax (up to 100 participants), and VoicePrint security
+      for biometric authentication. Pricing is $25/month per line with unlimited US/Canada calling.
+    questions_and_answers:
+      - question: What makes TelecomCorp's VoiceLink Pro different from standard VoIP?
+        answer: |
+          VoiceLink Pro uses advanced codec compression and AI-powered noise cancellation to deliver
+          HD voice quality, plus features like SmartTransfer and VoicePrint biometric security.
+      - question: What conferencing capabilities does VoiceLink Pro offer?
+        answer: |
+          VoiceLink Pro includes ConferenceMax which supports up to 100 participants in conference calls.
+      - question: What is the pricing for VoiceLink Pro?
+        answer: |
+          VoiceLink Pro costs $25/month per line and includes unlimited US/Canada calling.
+document:
+  repo: https://github.com/instructlab/taxonomy.git
+  commit: main
+  patterns:
+    - README.md

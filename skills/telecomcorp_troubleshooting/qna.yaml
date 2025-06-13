@@ -1,0 +1,161 @@
+version: 3
+task_description: 'Troubleshoot TelecomCorp network connectivity issues using company-specific procedures and diagnostic tools'
+created_by: mrigankapaul
+seed_examples:
+  - question: |
+      A business customer with Professional tier service reports intermittent connectivity drops every 2-3 hours.
+      They have a backup WAN connection that doesn't experience issues. What troubleshooting steps should I follow?
+    answer: |
+      For Professional tier intermittent connectivity, follow this procedure:
+      1. **Initial Assessment** (5 minutes):
+         - Check AlertStream for any network alerts in customer's area
+         - Verify customer's service tier and SLA (Professional = 2-hour response)
+         - Review NetworkIQ analytics for pattern analysis
+      2. **Remote Diagnostics** (10 minutes):
+         - Run TelecomCorp's DiagnosticPro tool to test primary connection
+         - Check for packet loss, latency spikes, and jitter patterns
+         - Compare with backup WAN performance metrics
+      3. **Equipment Analysis** (10 minutes):
+         - Verify firmware version on customer's gateway device
+         - Check for overheating issues (Professional tier uses Gateway Pro 3000)
+         - Review error logs for authentication or DHCP renewal failures
+      4. **Network Path Investigation** (15 minutes):
+         - Trace route to identify where drops occur
+         - Check for congestion on upstream links
+         - Verify BGP routing stability to customer premise
+      5. **Resolution Steps**:
+         - If equipment issue: Schedule tech dispatch within 2-hour SLA
+         - If network issue: Engage NOC for priority routing adjustment
+         - If pattern suggests interference: Schedule site survey
+         - Document findings in CRM with AlertStream correlation
+      Always update customer via TelecomCorp mobile app with progress updates every 30 minutes.
+  - question: |
+      An Enterprise customer's FiberLink Pro connection shows degraded performance during peak hours,
+      dropping from 25 Gbps to 8 Gbps. They have quantum encryption enabled. How should I investigate?
+    answer: |
+      For Enterprise FiberLink Pro performance degradation, use this escalated procedure:
+      1. **Immediate Enterprise Protocol** (2 minutes):
+         - Open Priority 1 ticket (30-minute SLA requirement)
+         - Alert NOC immediately for Enterprise customer impact
+         - Notify customer's dedicated account manager
+      2. **FiberLink Pro Specific Diagnostics** (8 minutes):
+         - Access FiberLink Pro management console
+         - Check photonic switching metrics and quantum channel integrity
+         - Verify ProLink Gateway 5000 series performance counters
+         - Review self-healing mesh topology status
+      3. **Peak Hour Traffic Analysis** (10 minutes):
+         - Use NetworkIQ analytics to identify traffic patterns
+         - Check for unexpected bandwidth utilization
+         - Verify QoS policies are properly applied
+         - Analyze quantum encryption overhead metrics
+      4. **Infrastructure Investigation** (10 minutes):
+         - Check fiber optic signal strength and quality
+         - Verify photonic switching fabric isn't experiencing issues
+         - Review redundant path availability and load balancing
+         - Check for any maintenance windows affecting backbone
+      5. **Enterprise Resolution Path**:
+         - If quantum encryption overhead: Optimize encryption parameters
+         - If switching fabric issue: Engage FiberLink Pro engineering team
+         - If bandwidth contention: Implement priority routing immediately
+         - If equipment degradation: Dispatch certified FiberLink Pro technician
+      Provide real-time updates via dedicated Enterprise portal and account manager.
+      Document all quantum encryption parameters and photonic switching metrics.
+  - question: |
+      A residential customer with Essential tier reports their SmartHome devices keep disconnecting
+      from the HomeLink Hub Pro. They have 47 connected devices. What diagnostic approach should I use?
+    answer: |
+      For SmartHome connectivity issues with HomeLink Hub Pro, follow this procedure:
+      1. **Device Inventory and Assessment** (5 minutes):
+         - Review customer's 47 connected devices via HomeLink management portal
+         - Check if disconnections affect specific device types or all devices
+         - Verify HomeLink Hub Pro firmware version and health status
+         - Note any recent device additions or changes
+      2. **HomeLink Protocol Analysis** (10 minutes):
+         - Check HomeLink protocol signal strength to each device zone
+         - Review QoS+ bandwidth allocation for IoT devices
+         - Verify SecureNode isolation isn't blocking device communication
+         - Check for RF interference from neighboring networks
+      3. **Hub Resource Analysis** (8 minutes):
+         - Review HomeLink Hub Pro CPU and memory utilization
+         - Check if 47 devices are approaching hub capacity limits
+         - Analyze automatic device discovery logs for conflicts
+         - Verify power supply stability to hub
+      4. **Network Integration Testing** (10 minutes):
+         - Test upstream connectivity from hub to TelecomCorp network
+         - Check DHCP lease table for device IP conflicts
+         - Verify internet gateway routing for HomeLink traffic
+         - Test DNS resolution for cloud-connected devices
+      5. **Resolution Strategy**:
+         - If device limit reached: Recommend HomeLink Hub Pro+ upgrade
+         - If RF interference: Adjust HomeLink channel settings
+         - If SecureNode blocking: Whitelist specific device protocols
+         - If power issues: Check hub power adapter and replace if needed
+         - If firmware bugs: Schedule automatic overnight update
+      Follow up in 24 hours to verify stability. Document device types and
+      connection patterns for future optimization.
+  - question: |
+      A business customer reports VoiceLink Pro calls have poor audio quality with choppy voice
+      and echo issues. They're using ConferenceMax for team meetings. How should I diagnose this?
+    answer: |
+      For VoiceLink Pro audio quality issues, use this diagnostic approach:
+      1. **Call Quality Baseline Testing** (5 minutes):
+         - Test direct VoiceLink Pro call to TelecomCorp test number
+         - Verify HD voice codec is being negotiated properly
+         - Check if issue occurs on all devices or specific endpoints
+         - Test both conference and direct calling scenarios
+      2. **Network Path Quality Analysis** (10 minutes):
+         - Measure jitter, packet loss, and latency to VoiceLink servers
+         - Verify QoS prioritization for voice traffic
+         - Check upstream bandwidth utilization during calls
+         - Test with AI noise cancellation enabled/disabled
+      3. **ConferenceMax Specific Testing** (8 minutes):
+         - Join test conference with multiple participants
+         - Check audio mixing quality from ConferenceMax servers
+         - Verify each participant's audio contribution quality
+         - Test SmartTransfer functionality between devices
+      4. **Equipment and Configuration Review** (10 minutes):
+         - Verify VoiceLink Pro client firmware versions
+         - Check audio device drivers and settings
+         - Test with different microphones/speakers
+         - Review VoicePrint security settings for interference
+      5. **VoiceLink Pro Resolution Steps**:
+         - If codec issues: Force HD codec negotiation
+         - If network quality: Implement voice QoS optimization
+         - If ConferenceMax issues: Switch to alternate mixing server
+         - If equipment problems: Recommend certified VoiceLink devices
+         - If echo: Adjust acoustic echo cancellation parameters
+      Schedule follow-up test call within 2 hours to verify resolution.
+      Provide customer with VoiceLink Pro optimization guide.
+  - question: |
+      An Enterprise customer wants to integrate their existing MPLS network with TelecomCorp's
+      FiberLink Pro service for hybrid connectivity. What planning steps should I recommend?
+    answer: |
+      For Enterprise MPLS-FiberLink Pro hybrid integration, provide this planning guidance:
+      1. **Current Network Assessment** (Planning Phase):
+         - Document existing MPLS topology, bandwidth, and SLA requirements
+         - Identify critical applications and their performance needs
+         - Review current routing protocols (BGP, OSPF) and IP addressing
+         - Assess security policies and compliance requirements
+      2. **FiberLink Pro Integration Design**:
+         - Plan quantum-encrypted tunnels over FiberLink Pro
+         - Design BGP routing for intelligent path selection
+         - Configure MPLS-over-FiberLink Pro for seamless integration
+         - Plan bandwidth allocation between MPLS and FiberLink Pro paths
+      3. **Hybrid Connectivity Architecture**:
+         - Primary traffic via FiberLink Pro (25 Gbps capacity)
+         - MPLS as backup/overflow path with automatic failover
+         - Critical applications get dedicated FiberLink Pro bandwidth
+         - Non-critical traffic load-balanced across both connections
+      4. **Implementation Strategy**:
+         - Phase 1: Install FiberLink Pro alongside existing MPLS
+         - Phase 2: Configure hybrid routing with gradual traffic migration
+         - Phase 3: Optimize performance and security policies
+         - Phase 4: Full production with MPLS as backup only
+      5. **TelecomCorp Integration Services**:
+         - Assign dedicated Enterprise Solutions Architect
+         - Provide FiberLink Pro-MPLS integration guide
+         - Schedule quantum encryption key management setup
+         - Include NetworkIQ analytics for both connection types
+         - Offer 24/7 white-glove support during migration
+      Recommend 90-day integration timeline with monthly milestone reviews.
+      Include disaster recovery testing and documentation updates.

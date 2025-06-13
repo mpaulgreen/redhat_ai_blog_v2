@@ -1,0 +1,179 @@
+version: 3
+task_description: 'Analyze network security threats and implement TelecomCorp security protocols using CloudShield and SecureNode technologies'
+created_by: mrigankapaul
+seed_examples:
+  - question: |
+      A customer's NetworkIQ dashboard shows unusual traffic patterns - 500% increase in outbound
+      connections from their network at 3 AM daily. CloudShield hasn't triggered alerts. How should I analyze this?
+    answer: |
+      For suspicious traffic pattern analysis with TelecomCorp security tools:
+      1. **Initial CloudShield Review** (5 minutes):
+         - Check why CloudShield didn't trigger alerts for traffic anomaly
+         - Review baseline traffic patterns for past 30 days
+         - Verify CloudShield DDoS protection thresholds are appropriate
+         - Check if traffic is encrypted or using standard protocols
+      2. **NetworkIQ Deep Dive Analysis** (15 minutes):
+         - Identify source devices/IPs generating outbound connections
+         - Analyze destination IPs and ports for pattern recognition
+         - Check for botnet command-and-control communication signatures
+         - Review DNS query patterns for suspicious domains
+      3. **SecureNode Investigation** (10 minutes):
+         - Check if IoT devices are involved using SecureNode logs
+         - Verify device isolation policies are working correctly
+         - Look for lateral movement between network segments
+         - Review any recent device additions or firmware updates
+      4. **Threat Classification and Response**:
+         - **If legitimate**: Likely automated backup, update, or sync process
+           - Whitelist known-good destinations in CloudShield
+           - Adjust NetworkIQ baseline to include scheduled activity
+         - **If suspicious**: Potential malware or botnet activity
+           - Quarantine affected devices using SecureNode isolation
+           - Implement CloudShield rate limiting for outbound connections
+           - Coordinate with customer for device security scanning
+         - **If confirmed threat**: Active security incident
+           - Engage TelecomCorp Security Operations Center immediately
+           - Implement emergency traffic blocking via CloudShield
+           - Initiate incident response procedures
+      5. **Prevention and Monitoring**:
+         - Implement custom CloudShield rules for this traffic pattern
+         - Set up NetworkIQ alerts for similar anomalies
+         - Recommend customer security assessment
+         - Schedule follow-up monitoring for 2 weeks
+      Document all findings in security incident tracking system.
+  - question: |
+      An Enterprise customer with quantum encryption reports potential eavesdropping attempts
+      on their FiberLink Pro connection. What investigation protocol should I follow?
+    answer: |
+      For quantum encryption breach investigation on FiberLink Pro:
+      1. **Immediate Security Response** (Critical - 5 minutes):
+         - Escalate to TelecomCorp Quantum Security Team immediately
+         - Do NOT disconnect service (may destroy evidence)
+         - Enable enhanced quantum channel monitoring
+         - Alert customer's dedicated security contact
+      2. **Quantum Channel Integrity Analysis** (10 minutes):
+         - Check quantum key distribution (QKD) logs for anomalies
+         - Verify photonic switching integrity and signal paths
+         - Review quantum entanglement correlation data
+         - Check for any unexplained quantum decoherence events
+      3. **Physical Infrastructure Security** (15 minutes):
+         - Verify fiber optic cable physical security
+         - Check for unauthorized taps or bends in fiber runs
+         - Review access logs for TelecomCorp network equipment
+         - Inspect ProLink Gateway 5000 for tampering signs
+      4. **Advanced Threat Hunting**:
+         - Analyze quantum noise patterns for eavesdropping signatures
+         - Check classical channel encryption as secondary verification
+         - Review all network traffic metadata (without decryption)
+         - Coordinate with federal cybersecurity agencies if required
+      5. **Quantum Security Protocols**:
+         - Generate new quantum keys immediately
+         - Implement additional photonic path randomization
+         - Increase quantum error correction monitoring
+         - Schedule emergency security audit by certified team
+      6. **Enterprise Communication**:
+         - Provide real-time updates via secure encrypted channel
+         - Document all quantum metrics and anomalies
+         - Prepare executive briefing on investigation findings
+         - Coordinate with customer's security team and legal counsel
+      This is a critical security event requiring immediate specialized response.
+      All actions must be logged for potential forensic analysis.
+  - question: |
+      A customer reports their HomeLink IoT devices are behaving strangely - smart lights turning on/off
+      randomly and thermostats changing settings. SecureNode isolation is enabled. How should I investigate?
+    answer: |
+      For potential IoT device compromise with SecureNode protection:
+      1. **Immediate Containment Assessment** (5 minutes):
+         - Verify SecureNode isolation is functioning properly
+         - Check if compromised devices can communicate outside their VLAN
+         - Review HomeLink Hub Pro logs for unauthorized commands
+         - Identify which specific devices are exhibiting unusual behavior
+      2. **Device Behavior Analysis** (10 minutes):
+         - Use HomeLink management portal to review device command history
+         - Check for commands issued outside normal user patterns
+         - Analyze timing patterns of suspicious device actions
+         - Review any recent firmware updates or new device additions
+      3. **Network Traffic Investigation** (15 minutes):
+         - Monitor HomeLink protocol traffic for anomalies
+         - Check CloudShield logs for blocked outbound connections from IoT VLAN
+         - Look for attempts to communicate with known malicious IoT botnets
+         - Verify all device authentication certificates are valid
+      4. **Source Identification**:
+         - Check if customer's mobile app or other authorized controllers show the commands
+         - Review access logs for HomeLink Hub Pro administrative interface
+         - Investigate if any device has been physically tampered with
+         - Analyze if compromise originated from customer's main network
+      5. **SecureNode Enhanced Response**:
+         - Implement stricter SecureNode isolation for affected devices
+         - Temporarily disable internet access for compromised devices
+         - Force firmware rollback on affected devices if possible
+         - Generate new HomeLink protocol security keys
+      6. **Resolution and Prevention**:
+         - Factory reset and re-provision compromised devices
+         - Update SecureNode policies to prevent similar attacks
+         - Recommend customer change all IoT device default passwords
+         - Schedule follow-up security assessment in 48 hours
+      Document all device behaviors and remediation steps for security analysis.
+  - question: |
+      A customer's NetworkIQ dashboard shows a sudden spike in cryptocurrency mining traffic
+      from multiple devices on their network. CloudShield blocked some connections but traffic continues.
+      How should I respond to this potential cryptojacking incident?
+    answer: |
+      For suspected cryptojacking incident with TelecomCorp security tools:
+      1. **Immediate Containment** (5 minutes):
+         - Enable emergency CloudShield strict mode to block all non-essential outbound traffic
+         - Identify source devices using NetworkIQ traffic analysis
+         - Check SecureNode logs for lateral movement between network segments
+         - Alert customer immediately about potential security breach
+      2. **Threat Assessment** (10 minutes):
+         - Analyze cryptocurrency wallet addresses and mining pool destinations
+         - Check for known cryptojacking malware signatures in traffic patterns
+         - Review recent device installations or software updates
+         - Verify if mining traffic correlates with specific user activities
+      3. **Advanced Investigation** (15 minutes):
+         - Use NetworkIQ deep packet inspection for mining protocol detection
+         - Check DNS queries for suspicious cryptocurrency-related domains
+         - Analyze CPU and power consumption patterns from affected devices
+         - Review CloudShield logs for initial compromise vectors
+      4. **Remediation Strategy**:
+         - **If confirmed cryptojacking**: Quarantine affected devices using SecureNode isolation
+         - **If false positive**: Adjust CloudShield rules to allow legitimate traffic
+         - **If widespread**: Engage TelecomCorp Security Operations Center for incident response
+         - **If customer-initiated**: Educate about network usage policies and security risks
+      5. **Prevention and Monitoring**:
+         - Implement enhanced CloudShield rules for cryptocurrency traffic detection
+         - Set up NetworkIQ alerts for unusual CPU-intensive network activity
+         - Recommend customer endpoint security assessment
+         - Schedule weekly monitoring for 30 days post-incident
+      Document all findings and coordinate with law enforcement if criminal activity suspected.
+  - question: |
+      An Enterprise customer reports that their VoicePrint biometric authentication on VoiceLink Pro
+      is failing intermittently. They suspect potential voice spoofing attacks targeting their executives.
+      What security investigation should I conduct?
+    answer: |
+      For suspected VoicePrint spoofing attacks on VoiceLink Pro:
+      1. **VoicePrint Security Analysis** (5 minutes):
+         - Access VoiceLink Pro biometric logs for failed authentication attempts
+         - Check for patterns in failed authentications (timing, source, targets)
+         - Verify VoicePrint algorithm version and security parameters
+         - Review any recent executive voice recordings or public appearances
+      2. **Audio Forensics Investigation** (15 minutes):
+         - Analyze audio samples from failed authentication attempts
+         - Check for signs of synthetic voice generation or deepfake audio
+         - Compare spectral analysis of suspicious calls with baseline voiceprints
+         - Look for compression artifacts or digital manipulation signatures
+      3. **Source Tracking and Intelligence** (10 minutes):
+         - Trace call origins and routing through NetworkIQ analytics
+         - Check if attacks correlate with public executive appearances or recordings
+         - Analyze timing patterns for social engineering campaign indicators
+         - Cross-reference with known voice spoofing attack vectors
+      4. **Enhanced Security Response**:
+         - **If spoofing confirmed**: Immediately update VoicePrint sensitivity parameters
+         - **If targeted campaign**: Enable multi-factor authentication for executive accounts
+         - **If ongoing threat**: Implement real-time voice anomaly detection
+         - **If sophisticated attack**: Engage federal cybersecurity authorities
+      5. **Executive Protection Measures**:
+         - Brief executives on voice spoofing risks and verification procedures
+         - Implement callback verification for sensitive VoiceLink Pro transactions
+         - Enhanced logging for all executive VoicePrint interactions
+         - Regular VoicePrint baseline updates to detect gradual spoofing attempts
+      Coordinate with corporate security and legal teams for potential criminal investigation.
