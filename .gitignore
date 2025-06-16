@@ -3,3 +3,4 @@ instructlab-granite-7b-lab-trained
 venv/
 *.lock
 .DS_Store
+.idea/

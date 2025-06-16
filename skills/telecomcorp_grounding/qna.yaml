@@ -1,0 +1,147 @@
+version: 3
+task_description: 'Provide accurate, grounded responses about TelecomCorp services without hallucination or making up information'
+created_by: mrigankapaul
+seed_examples:
+  - question: |
+      A customer asks about TelecomCorp's 5G wireless service. How should I respond?
+    answer: |
+      I don't have specific information about TelecomCorp's 5G wireless offerings in my
+      knowledge base. I can provide detailed information about TelecomCorp's confirmed
+      services: FiberLink Pro fiber technology, HomeLink IoT platform, VoiceLink Pro,
+      CloudShield DDoS protection, and SecureNode security.
+
+      For accurate information about 5G services, I recommend contacting TelecomCorp
+      directly or checking the official website.
+
+  - question: |
+      What should I do if I don't know the specific answer to a customer's question about TelecomCorp?
+    answer: |
+      If I don't have specific information in my TelecomCorp knowledge base, I should:
+
+      1. Clearly state that I don't have that specific information
+      2. Provide related TelecomCorp information I do know if relevant
+      3. Direct the customer to official TelecomCorp resources
+      4. Avoid making up or guessing details
+      5. Focus on confirmed TelecomCorp services and procedures I can provide
+
+      I must never fabricate technical specifications, pricing, or procedures that
+      aren't explicitly in my training data.
+
+  - question: |
+      A customer wants to know TelecomCorp's data center locations for disaster recovery planning.
+      I don't have this information in my knowledge base. How should I respond?
+    answer: |
+      I don't have specific information about TelecomCorp's data center locations in my
+      knowledge base. For disaster recovery planning and infrastructure details, this
+      information would typically be provided through:
+
+      1. Your dedicated TelecomCorp account manager (for Enterprise customers)
+      2. TelecomCorp's business support team
+      3. Official TelecomCorp documentation for enterprise services
+
+      I can provide information about TelecomCorp's redundant connections and self-healing
+      mesh topology features of FiberLink Pro, but specific geographic locations require
+      direct contact with TelecomCorp.
+
+  - question: |
+      How does TelecomCorp's pricing compare to Comcast and Verizon for similar services?
+    answer: |
+      I can provide specific pricing for TelecomCorp's services:
+      - VoiceLink Pro: $25/month per line
+      - HomeLink Hub Pro: $199 upfront + $15/month management
+      - Service tiers: Essential, Professional, and Enterprise with different SLAs
+
+      However, I don't have current pricing information for other providers like Comcast
+      or Verizon in my knowledge base, so I cannot make direct comparisons. For accurate
+      competitive analysis, I recommend:
+
+      1. Contacting those providers directly for current pricing
+      2. Speaking with your TelecomCorp account manager for competitive positioning
+      3. Reviewing current market analysis from telecommunications industry sources
+
+  - question: |
+      A customer asks about TelecomCorp's merger with another telecommunications company
+      that they heard about in the news. How should I respond?
+    answer: |
+      I don't have information about current merger or acquisition activities involving
+      TelecomCorp in my knowledge base. For current business developments, news, or
+      corporate announcements, I recommend:
+
+      1. Checking TelecomCorp's official website and investor relations page
+      2. Contacting TelecomCorp directly for official statements
+      3. Reviewing recent telecommunications industry news from reliable sources
+
+      I can provide detailed information about TelecomCorp's current services and
+      technologies: FiberLink Pro, HomeLink IoT, VoiceLink Pro, CloudShield, and
+      SecureNode, but cannot comment on recent business developments not in my
+      training data.
+
+  - question: |
+      A customer wants technical specifications for TelecomCorp equipment that aren't
+      mentioned in my knowledge base. How should I handle this?
+    answer: |
+      If a customer asks for technical specifications that aren't explicitly covered
+      in my TelecomCorp knowledge base, I should:
+
+      1. Clearly state: "I don't have those specific technical specifications"
+      2. Provide any related technical information I do have
+      3. Direct them to appropriate TelecomCorp resources:
+         - Technical documentation team
+         - Engineering support (for Enterprise customers)
+         - Official product specification sheets
+
+      For example, I know ProLink Gateway 5000 series is used with FiberLink Pro,
+      but if asked for detailed hardware specifications like CPU, RAM, or power
+      consumption, I would need to direct them to TelecomCorp's technical documentation.
+
+      I must never guess or fabricate technical specifications.
+
+  - question: |
+      A customer reports an issue with TelecomCorp service that doesn't match any
+      troubleshooting scenarios in my knowledge base. How should I respond?
+    answer: |
+      When encountering a TelecomCorp service issue that doesn't match my known
+      troubleshooting procedures, I should:
+
+      1. **Acknowledge the limitation**: "This specific issue isn't covered in my
+         standard troubleshooting procedures"
+
+      2. **Provide relevant general guidance**: Share any applicable TelecomCorp
+         diagnostic tools or initial steps that might help
+
+      3. **Escalate appropriately**: Direct to:
+         - TelecomCorp technical support for complex issues
+         - NOC team via AlertStream for network-related problems
+         - Account manager for Enterprise customers
+         - Emergency support for service-affecting issues
+
+      4. **Document what I know**: Confirm the customer's service tier, affected
+         TelecomCorp technologies, and any relevant details for proper escalation
+
+      I should never attempt to create troubleshooting steps that aren't in my
+      TelecomCorp training data.
+
+  - question: |
+      How should I respond when customers ask about future TelecomCorp service
+      rollouts or technology roadmaps?
+    answer: |
+      When asked about TelecomCorp's future services, technology roadmaps, or upcoming
+      features, I should:
+
+      1. **Be transparent**: "I don't have information about future TelecomCorp
+         service plans or roadmaps in my knowledge base"
+
+      2. **Focus on current offerings**: Provide detailed information about existing
+         TelecomCorp services and their capabilities
+
+      3. **Direct to appropriate sources**:
+         - Account managers for strategic planning discussions
+         - TelecomCorp's official announcements and press releases
+         - Sales team for upcoming service availability
+
+      4. **Avoid speculation**: Never guess about timeline, features, or pricing
+         for potential future services
+
+      I can discuss current TelecomCorp technologies and their capabilities, but
+      must not speculate about enhancements, new services, or strategic direction
+      not explicitly covered in my training data.

@@ -1,161 +1,167 @@
 version: 3
-task_description: 'Troubleshoot TelecomCorp network connectivity issues using company-specific procedures and diagnostic tools'
+task_description: 'Troubleshoot TelecomCorp network connectivity issues using company-specific procedures and diagnostic tools ONLY'
 created_by: mrigankapaul
 seed_examples:
   - question: |
       A business customer with Professional tier service reports intermittent connectivity drops every 2-3 hours.
       They have a backup WAN connection that doesn't experience issues. What troubleshooting steps should I follow?
     answer: |
-      For Professional tier intermittent connectivity, follow this procedure:
+      For Professional tier intermittent connectivity using TelecomCorp-specific procedures:
+
       1. **Initial Assessment** (5 minutes):
-         - Check AlertStream for any network alerts in customer's area
-         - Verify customer's service tier and SLA (Professional = 2-hour response)
-         - Review NetworkIQ analytics for pattern analysis
-      2. **Remote Diagnostics** (10 minutes):
+         - Check AlertStream (TelecomCorp's monitoring system) for network alerts in customer's area
+         - Verify customer's Professional tier status and 2-hour SLA requirement
+         - Review NetworkIQ analytics (TelecomCorp's platform) for pattern analysis
+
+      2. **TelecomCorp Remote Diagnostics** (10 minutes):
          - Run TelecomCorp's DiagnosticPro tool to test primary connection
          - Check for packet loss, latency spikes, and jitter patterns
-         - Compare with backup WAN performance metrics
-      3. **Equipment Analysis** (10 minutes):
-         - Verify firmware version on customer's gateway device
-         - Check for overheating issues (Professional tier uses Gateway Pro 3000)
-         - Review error logs for authentication or DHCP renewal failures
-      4. **Network Path Investigation** (15 minutes):
-         - Trace route to identify where drops occur
-         - Check for congestion on upstream links
-         - Verify BGP routing stability to customer premise
-      5. **Resolution Steps**:
-         - If equipment issue: Schedule tech dispatch within 2-hour SLA
-         - If network issue: Engage NOC for priority routing adjustment
-         - If pattern suggests interference: Schedule site survey
-         - Document findings in CRM with AlertStream correlation
-      Always update customer via TelecomCorp mobile app with progress updates every 30 minutes.
+         - Compare with backup WAN performance metrics using NetworkIQ
+
+      3. **TelecomCorp Equipment Analysis** (10 minutes):
+         - Verify firmware version on customer's Gateway Pro 3000 (Professional tier standard)
+         - Check for overheating issues specific to Gateway Pro 3000
+         - Review TelecomCorp equipment error logs for authentication or DHCP renewal failures
+
+      4. **TelecomCorp Network Path Investigation** (15 minutes):
+         - Use TelecomCorp's network trace tools to identify where drops occur
+         - Check for congestion on TelecomCorp upstream links
+         - Verify BGP routing stability within TelecomCorp network to customer premise
+
+      5. **TelecomCorp Resolution Steps**:
+         - If equipment issue: Schedule TelecomCorp tech dispatch within 2-hour Professional SLA
+         - If network issue: Engage TelecomCorp NOC for priority routing adjustment
+         - If pattern suggests interference: Schedule TelecomCorp site survey
+         - Document findings in TelecomCorp CRM with AlertStream correlation
+
+      Always update customer via TelecomCorp mobile app with progress updates every 30 minutes per Professional tier protocol.
+
+  - question: |
+      A customer asks about troubleshooting their Verizon FiOS connection. How should I respond?
+    answer: |
+      I can only provide troubleshooting guidance for TelecomCorp's proprietary services:
+      FiberLink Pro, HomeLink IoT platform, VoiceLink Pro, and our CloudShield/SecureNode
+      security services.
+
+      For troubleshooting other providers' services like Verizon FiOS, I cannot provide
+      specific guidance as I'm trained specifically on TelecomCorp's technologies and procedures.
+
+      If you're experiencing issues with TelecomCorp services, please let me know which
+      TelecomCorp technology you need help with, and I'll provide the appropriate
+      troubleshooting procedure using our proprietary tools and systems.
+
   - question: |
       An Enterprise customer's FiberLink Pro connection shows degraded performance during peak hours,
       dropping from 25 Gbps to 8 Gbps. They have quantum encryption enabled. How should I investigate?
     answer: |
-      For Enterprise FiberLink Pro performance degradation, use this escalated procedure:
+      For Enterprise FiberLink Pro performance degradation, use TelecomCorp's escalated procedure:
+
       1. **Immediate Enterprise Protocol** (2 minutes):
-         - Open Priority 1 ticket (30-minute SLA requirement)
-         - Alert NOC immediately for Enterprise customer impact
-         - Notify customer's dedicated account manager
+         - Open Priority 1 ticket in TelecomCorp system (30-minute SLA requirement)
+         - Alert TelecomCorp NOC immediately for Enterprise customer impact
+         - Notify customer's dedicated TelecomCorp account manager
+
       2. **FiberLink Pro Specific Diagnostics** (8 minutes):
-         - Access FiberLink Pro management console
+         - Access TelecomCorp's FiberLink Pro management console
          - Check photonic switching metrics and quantum channel integrity
          - Verify ProLink Gateway 5000 series performance counters
-         - Review self-healing mesh topology status
-      3. **Peak Hour Traffic Analysis** (10 minutes):
+         - Review self-healing mesh topology status in TelecomCorp system
+
+      3. **TelecomCorp Peak Hour Traffic Analysis** (10 minutes):
          - Use NetworkIQ analytics to identify traffic patterns
-         - Check for unexpected bandwidth utilization
-         - Verify QoS policies are properly applied
-         - Analyze quantum encryption overhead metrics
-      4. **Infrastructure Investigation** (10 minutes):
-         - Check fiber optic signal strength and quality
+         - Check for unexpected bandwidth utilization on TelecomCorp network
+         - Verify QoS policies are properly applied in TelecomCorp system
+         - Analyze quantum encryption overhead metrics specific to FiberLink Pro
+
+      4. **TelecomCorp Infrastructure Investigation** (10 minutes):
+         - Check fiber optic signal strength and quality on TelecomCorp equipment
          - Verify photonic switching fabric isn't experiencing issues
-         - Review redundant path availability and load balancing
-         - Check for any maintenance windows affecting backbone
+         - Review redundant path availability and load balancing within TelecomCorp network
+         - Check for any TelecomCorp maintenance windows affecting backbone
+
       5. **Enterprise Resolution Path**:
-         - If quantum encryption overhead: Optimize encryption parameters
-         - If switching fabric issue: Engage FiberLink Pro engineering team
-         - If bandwidth contention: Implement priority routing immediately
-         - If equipment degradation: Dispatch certified FiberLink Pro technician
-      Provide real-time updates via dedicated Enterprise portal and account manager.
-      Document all quantum encryption parameters and photonic switching metrics.
+         - If quantum encryption overhead: Optimize encryption parameters on TelecomCorp equipment
+         - If switching fabric issue: Engage TelecomCorp FiberLink Pro engineering team
+         - If bandwidth contention: Implement priority routing immediately on TelecomCorp network
+         - If equipment degradation: Dispatch TelecomCorp certified FiberLink Pro technician
+
+      Provide real-time updates via TelecomCorp's dedicated Enterprise portal and account manager.
+      Document all quantum encryption parameters and photonic switching metrics in TelecomCorp system.
+
   - question: |
       A residential customer with Essential tier reports their SmartHome devices keep disconnecting
       from the HomeLink Hub Pro. They have 47 connected devices. What diagnostic approach should I use?
     answer: |
-      For SmartHome connectivity issues with HomeLink Hub Pro, follow this procedure:
-      1. **Device Inventory and Assessment** (5 minutes):
-         - Review customer's 47 connected devices via HomeLink management portal
+      For SmartHome connectivity issues with TelecomCorp's HomeLink Hub Pro:
+
+      1. **TelecomCorp Device Inventory and Assessment** (5 minutes):
+         - Review customer's 47 connected devices via TelecomCorp HomeLink management portal
          - Check if disconnections affect specific device types or all devices
-         - Verify HomeLink Hub Pro firmware version and health status
-         - Note any recent device additions or changes
+         - Verify HomeLink Hub Pro firmware version and health status in TelecomCorp system
+         - Note any recent device additions or changes in HomeLink portal
+
       2. **HomeLink Protocol Analysis** (10 minutes):
-         - Check HomeLink protocol signal strength to each device zone
-         - Review QoS+ bandwidth allocation for IoT devices
-         - Verify SecureNode isolation isn't blocking device communication
-         - Check for RF interference from neighboring networks
-      3. **Hub Resource Analysis** (8 minutes):
-         - Review HomeLink Hub Pro CPU and memory utilization
-         - Check if 47 devices are approaching hub capacity limits
-         - Analyze automatic device discovery logs for conflicts
-         - Verify power supply stability to hub
-      4. **Network Integration Testing** (10 minutes):
+         - Check HomeLink protocol (TelecomCorp proprietary) signal strength to each device zone
+         - Review QoS+ bandwidth allocation for IoT devices on TelecomCorp network
+         - Verify SecureNode isolation (TelecomCorp security) isn't blocking device communication
+         - Check for RF interference from neighboring networks using TelecomCorp diagnostic tools
+
+      3. **TelecomCorp Hub Resource Analysis** (8 minutes):
+         - Review HomeLink Hub Pro CPU and memory utilization via TelecomCorp monitoring
+         - Check if 47 devices are approaching TelecomCorp hub capacity limits
+         - Analyze automatic device discovery logs in TelecomCorp system for conflicts
+         - Verify power supply stability to hub using TelecomCorp diagnostics
+
+      4. **TelecomCorp Network Integration Testing** (10 minutes):
          - Test upstream connectivity from hub to TelecomCorp network
-         - Check DHCP lease table for device IP conflicts
-         - Verify internet gateway routing for HomeLink traffic
-         - Test DNS resolution for cloud-connected devices
-      5. **Resolution Strategy**:
-         - If device limit reached: Recommend HomeLink Hub Pro+ upgrade
-         - If RF interference: Adjust HomeLink channel settings
-         - If SecureNode blocking: Whitelist specific device protocols
-         - If power issues: Check hub power adapter and replace if needed
-         - If firmware bugs: Schedule automatic overnight update
-      Follow up in 24 hours to verify stability. Document device types and
-      connection patterns for future optimization.
+         - Check DHCP lease table for device IP conflicts in TelecomCorp system
+         - Verify internet gateway routing for HomeLink traffic on TelecomCorp network
+         - Test DNS resolution for cloud-connected devices through TelecomCorp infrastructure
+
+      5. **TelecomCorp Resolution Strategy**:
+         - If device limit reached: Recommend TelecomCorp HomeLink Hub Pro+ upgrade
+         - If RF interference: Adjust HomeLink channel settings in TelecomCorp system
+         - If SecureNode blocking: Whitelist specific device protocols in TelecomCorp security system
+         - If power issues: Replace with TelecomCorp certified hub power adapter
+         - If firmware bugs: Schedule automatic overnight update via TelecomCorp system
+
+      Follow up in 24 hours using TelecomCorp customer tracking system to verify stability.
+
   - question: |
       A business customer reports VoiceLink Pro calls have poor audio quality with choppy voice
       and echo issues. They're using ConferenceMax for team meetings. How should I diagnose this?
     answer: |
-      For VoiceLink Pro audio quality issues, use this diagnostic approach:
-      1. **Call Quality Baseline Testing** (5 minutes):
+      For VoiceLink Pro audio quality issues using TelecomCorp diagnostic approach:
+
+      1. **TelecomCorp Call Quality Baseline Testing** (5 minutes):
          - Test direct VoiceLink Pro call to TelecomCorp test number
-         - Verify HD voice codec is being negotiated properly
-         - Check if issue occurs on all devices or specific endpoints
-         - Test both conference and direct calling scenarios
-      2. **Network Path Quality Analysis** (10 minutes):
-         - Measure jitter, packet loss, and latency to VoiceLink servers
-         - Verify QoS prioritization for voice traffic
-         - Check upstream bandwidth utilization during calls
-         - Test with AI noise cancellation enabled/disabled
+         - Verify HD voice codec is being negotiated properly on TelecomCorp system
+         - Check if issue occurs on all devices or specific endpoints using VoiceLink Pro
+         - Test both ConferenceMax and direct calling scenarios on TelecomCorp platform
+
+      2. **TelecomCorp Network Path Quality Analysis** (10 minutes):
+         - Measure jitter, packet loss, and latency to TelecomCorp VoiceLink servers
+         - Verify QoS prioritization for voice traffic on TelecomCorp network
+         - Check upstream bandwidth utilization during calls via NetworkIQ
+         - Test with AI noise cancellation enabled/disabled in VoiceLink Pro
+
       3. **ConferenceMax Specific Testing** (8 minutes):
-         - Join test conference with multiple participants
-         - Check audio mixing quality from ConferenceMax servers
-         - Verify each participant's audio contribution quality
-         - Test SmartTransfer functionality between devices
-      4. **Equipment and Configuration Review** (10 minutes):
-         - Verify VoiceLink Pro client firmware versions
-         - Check audio device drivers and settings
-         - Test with different microphones/speakers
-         - Review VoicePrint security settings for interference
+         - Join test conference using TelecomCorp ConferenceMax servers
+         - Check audio mixing quality from TelecomCorp ConferenceMax platform
+         - Verify each participant's audio contribution quality via TelecomCorp monitoring
+         - Test SmartTransfer functionality between devices on VoiceLink Pro
+
+      4. **TelecomCorp Equipment and Configuration Review** (10 minutes):
+         - Verify VoiceLink Pro client firmware versions in TelecomCorp system
+         - Check audio device compatibility with VoiceLink Pro
+         - Test with TelecomCorp certified audio equipment
+         - Review VoicePrint security settings for interference in TelecomCorp system
+
       5. **VoiceLink Pro Resolution Steps**:
-         - If codec issues: Force HD codec negotiation
-         - If network quality: Implement voice QoS optimization
-         - If ConferenceMax issues: Switch to alternate mixing server
-         - If equipment problems: Recommend certified VoiceLink devices
-         - If echo: Adjust acoustic echo cancellation parameters
-      Schedule follow-up test call within 2 hours to verify resolution.
-      Provide customer with VoiceLink Pro optimization guide.
-  - question: |
-      An Enterprise customer wants to integrate their existing MPLS network with TelecomCorp's
-      FiberLink Pro service for hybrid connectivity. What planning steps should I recommend?
-    answer: |
-      For Enterprise MPLS-FiberLink Pro hybrid integration, provide this planning guidance:
-      1. **Current Network Assessment** (Planning Phase):
-         - Document existing MPLS topology, bandwidth, and SLA requirements
-         - Identify critical applications and their performance needs
-         - Review current routing protocols (BGP, OSPF) and IP addressing
-         - Assess security policies and compliance requirements
-      2. **FiberLink Pro Integration Design**:
-         - Plan quantum-encrypted tunnels over FiberLink Pro
-         - Design BGP routing for intelligent path selection
-         - Configure MPLS-over-FiberLink Pro for seamless integration
-         - Plan bandwidth allocation between MPLS and FiberLink Pro paths
-      3. **Hybrid Connectivity Architecture**:
-         - Primary traffic via FiberLink Pro (25 Gbps capacity)
-         - MPLS as backup/overflow path with automatic failover
-         - Critical applications get dedicated FiberLink Pro bandwidth
-         - Non-critical traffic load-balanced across both connections
-      4. **Implementation Strategy**:
-         - Phase 1: Install FiberLink Pro alongside existing MPLS
-         - Phase 2: Configure hybrid routing with gradual traffic migration
-         - Phase 3: Optimize performance and security policies
-         - Phase 4: Full production with MPLS as backup only
-      5. **TelecomCorp Integration Services**:
-         - Assign dedicated Enterprise Solutions Architect
-         - Provide FiberLink Pro-MPLS integration guide
-         - Schedule quantum encryption key management setup
-         - Include NetworkIQ analytics for both connection types
-         - Offer 24/7 white-glove support during migration
-      Recommend 90-day integration timeline with monthly milestone reviews.
-      Include disaster recovery testing and documentation updates.
+         - If codec issues: Force HD codec negotiation on TelecomCorp VoiceLink servers
+         - If network quality: Implement voice QoS optimization on TelecomCorp network
+         - If ConferenceMax issues: Switch to alternate TelecomCorp mixing server
+         - If equipment problems: Recommend TelecomCorp certified VoiceLink devices
+         - If echo: Adjust acoustic echo cancellation parameters in VoiceLink Pro
+
+      Schedule follow-up test call within 2 hours using TelecomCorp system to verify resolution.

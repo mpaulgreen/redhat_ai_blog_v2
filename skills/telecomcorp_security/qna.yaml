@@ -1,179 +1,191 @@
 version: 3
-task_description: 'Analyze network security threats and implement TelecomCorp security protocols using CloudShield and SecureNode technologies'
+task_description: 'Analyze network security threats and implement TelecomCorp security protocols using CloudShield and SecureNode technologies ONLY'
 created_by: mrigankapaul
 seed_examples:
   - question: |
       A customer's NetworkIQ dashboard shows unusual traffic patterns - 500% increase in outbound
       connections from their network at 3 AM daily. CloudShield hasn't triggered alerts. How should I analyze this?
     answer: |
-      For suspicious traffic pattern analysis with TelecomCorp security tools:
-      1. **Initial CloudShield Review** (5 minutes):
-         - Check why CloudShield didn't trigger alerts for traffic anomaly
-         - Review baseline traffic patterns for past 30 days
-         - Verify CloudShield DDoS protection thresholds are appropriate
-         - Check if traffic is encrypted or using standard protocols
-      2. **NetworkIQ Deep Dive Analysis** (15 minutes):
-         - Identify source devices/IPs generating outbound connections
-         - Analyze destination IPs and ports for pattern recognition
-         - Check for botnet command-and-control communication signatures
-         - Review DNS query patterns for suspicious domains
-      3. **SecureNode Investigation** (10 minutes):
+      For suspicious traffic pattern analysis using TelecomCorp security tools:
+
+      1. **TelecomCorp CloudShield Review** (5 minutes):
+         - Check why TelecomCorp's CloudShield didn't trigger alerts for traffic anomaly
+         - Review baseline traffic patterns in NetworkIQ for past 30 days
+         - Verify CloudShield DDoS protection thresholds are appropriate for customer tier
+         - Check if traffic is encrypted or using standard protocols via TelecomCorp monitoring
+
+      2. **TelecomCorp NetworkIQ Deep Dive Analysis** (15 minutes):
+         - Identify source devices/IPs generating outbound connections using NetworkIQ
+         - Analyze destination IPs and ports for pattern recognition in TelecomCorp system
+         - Check for botnet command-and-control communication signatures via CloudShield
+         - Review DNS query patterns for suspicious domains through TelecomCorp DNS monitoring
+
+      3. **TelecomCorp SecureNode Investigation** (10 minutes):
          - Check if IoT devices are involved using SecureNode logs
-         - Verify device isolation policies are working correctly
-         - Look for lateral movement between network segments
-         - Review any recent device additions or firmware updates
-      4. **Threat Classification and Response**:
+         - Verify TelecomCorp device isolation policies are working correctly
+         - Look for lateral movement between network segments in SecureNode
+         - Review any recent device additions or firmware updates in TelecomCorp HomeLink system
+
+      4. **TelecomCorp Threat Classification and Response**:
          - **If legitimate**: Likely automated backup, update, or sync process
-           - Whitelist known-good destinations in CloudShield
+           - Whitelist known-good destinations in TelecomCorp CloudShield
            - Adjust NetworkIQ baseline to include scheduled activity
          - **If suspicious**: Potential malware or botnet activity
-           - Quarantine affected devices using SecureNode isolation
+           - Quarantine affected devices using TelecomCorp SecureNode isolation
            - Implement CloudShield rate limiting for outbound connections
-           - Coordinate with customer for device security scanning
+           - Coordinate with customer for device security scanning via TelecomCorp protocols
          - **If confirmed threat**: Active security incident
            - Engage TelecomCorp Security Operations Center immediately
            - Implement emergency traffic blocking via CloudShield
-           - Initiate incident response procedures
-      5. **Prevention and Monitoring**:
+           - Initiate TelecomCorp incident response procedures
+
+      5. **TelecomCorp Prevention and Monitoring**:
          - Implement custom CloudShield rules for this traffic pattern
          - Set up NetworkIQ alerts for similar anomalies
-         - Recommend customer security assessment
-         - Schedule follow-up monitoring for 2 weeks
-      Document all findings in security incident tracking system.
+         - Recommend customer security assessment through TelecomCorp
+         - Schedule follow-up monitoring for 2 weeks via TelecomCorp systems
+
+      Document all findings in TelecomCorp security incident tracking system.
+
+  - question: |
+      A customer asks about implementing Cisco security appliances with TelecomCorp's network. How should I respond?
+    answer: |
+      I can only provide guidance for TelecomCorp's proprietary security solutions:
+      CloudShield DDoS protection, SecureNode IoT isolation, NetworkIQ analytics,
+      and VoicePrint biometric security for VoiceLink Pro.
+
+      For integrating third-party security equipment like Cisco appliances, I cannot
+      provide specific technical guidance as I'm trained exclusively on TelecomCorp's
+      security technologies and protocols.
+
+      If you need security solutions, I can help you understand how TelecomCorp's
+      CloudShield and SecureNode technologies can meet your security requirements.
+      For questions about third-party equipment integration, please contact
+      TelecomCorp's technical support team directly.
+
   - question: |
       An Enterprise customer with quantum encryption reports potential eavesdropping attempts
       on their FiberLink Pro connection. What investigation protocol should I follow?
     answer: |
-      For quantum encryption breach investigation on FiberLink Pro:
-      1. **Immediate Security Response** (Critical - 5 minutes):
+      For quantum encryption breach investigation on TelecomCorp FiberLink Pro:
+
+      1. **Immediate TelecomCorp Security Response** (Critical - 5 minutes):
          - Escalate to TelecomCorp Quantum Security Team immediately
          - Do NOT disconnect service (may destroy evidence)
-         - Enable enhanced quantum channel monitoring
-         - Alert customer's dedicated security contact
-      2. **Quantum Channel Integrity Analysis** (10 minutes):
-         - Check quantum key distribution (QKD) logs for anomalies
-         - Verify photonic switching integrity and signal paths
-         - Review quantum entanglement correlation data
-         - Check for any unexplained quantum decoherence events
-      3. **Physical Infrastructure Security** (15 minutes):
-         - Verify fiber optic cable physical security
-         - Check for unauthorized taps or bends in fiber runs
+         - Enable enhanced quantum channel monitoring on TelecomCorp FiberLink Pro system
+         - Alert customer's dedicated TelecomCorp security contact
+
+      2. **TelecomCorp Quantum Channel Integrity Analysis** (10 minutes):
+         - Check quantum key distribution (QKD) logs in TelecomCorp FiberLink Pro system for anomalies
+         - Verify photonic switching integrity and signal paths on TelecomCorp equipment
+         - Review quantum entanglement correlation data from TelecomCorp monitoring
+         - Check for any unexplained quantum decoherence events in TelecomCorp system
+
+      3. **TelecomCorp Physical Infrastructure Security** (15 minutes):
+         - Verify fiber optic cable physical security on TelecomCorp network
+         - Check for unauthorized taps or bends in TelecomCorp fiber runs
          - Review access logs for TelecomCorp network equipment
-         - Inspect ProLink Gateway 5000 for tampering signs
-      4. **Advanced Threat Hunting**:
-         - Analyze quantum noise patterns for eavesdropping signatures
-         - Check classical channel encryption as secondary verification
-         - Review all network traffic metadata (without decryption)
-         - Coordinate with federal cybersecurity agencies if required
-      5. **Quantum Security Protocols**:
-         - Generate new quantum keys immediately
-         - Implement additional photonic path randomization
-         - Increase quantum error correction monitoring
-         - Schedule emergency security audit by certified team
-      6. **Enterprise Communication**:
-         - Provide real-time updates via secure encrypted channel
-         - Document all quantum metrics and anomalies
-         - Prepare executive briefing on investigation findings
-         - Coordinate with customer's security team and legal counsel
-      This is a critical security event requiring immediate specialized response.
-      All actions must be logged for potential forensic analysis.
+         - Inspect ProLink Gateway 5000 for tampering signs using TelecomCorp protocols
+
+      4. **TelecomCorp Advanced Threat Hunting**:
+         - Analyze quantum noise patterns for eavesdropping signatures via TelecomCorp tools
+         - Check classical channel encryption as secondary verification on TelecomCorp system
+         - Review all network traffic metadata (without decryption) through NetworkIQ
+         - Coordinate with federal cybersecurity agencies if required per TelecomCorp policy
+
+      5. **TelecomCorp Quantum Security Protocols**:
+         - Generate new quantum keys immediately on TelecomCorp FiberLink Pro system
+         - Implement additional photonic path randomization via TelecomCorp equipment
+         - Increase quantum error correction monitoring on TelecomCorp network
+         - Schedule emergency security audit by TelecomCorp certified team
+
+      6. **TelecomCorp Enterprise Communication**:
+         - Provide real-time updates via TelecomCorp secure encrypted channel
+         - Document all quantum metrics and anomalies in TelecomCorp system
+         - Prepare executive briefing on investigation findings for TelecomCorp management
+         - Coordinate with customer's security team and legal counsel per TelecomCorp protocols
+
+      This is a critical security event requiring immediate TelecomCorp specialized response.
+
   - question: |
       A customer reports their HomeLink IoT devices are behaving strangely - smart lights turning on/off
       randomly and thermostats changing settings. SecureNode isolation is enabled. How should I investigate?
     answer: |
-      For potential IoT device compromise with SecureNode protection:
-      1. **Immediate Containment Assessment** (5 minutes):
-         - Verify SecureNode isolation is functioning properly
-         - Check if compromised devices can communicate outside their VLAN
-         - Review HomeLink Hub Pro logs for unauthorized commands
-         - Identify which specific devices are exhibiting unusual behavior
-      2. **Device Behavior Analysis** (10 minutes):
-         - Use HomeLink management portal to review device command history
-         - Check for commands issued outside normal user patterns
-         - Analyze timing patterns of suspicious device actions
-         - Review any recent firmware updates or new device additions
-      3. **Network Traffic Investigation** (15 minutes):
-         - Monitor HomeLink protocol traffic for anomalies
+      For potential IoT device compromise with TelecomCorp SecureNode protection:
+
+      1. **TelecomCorp Immediate Containment Assessment** (5 minutes):
+         - Verify TelecomCorp SecureNode isolation is functioning properly
+         - Check if compromised devices can communicate outside their VLAN via SecureNode logs
+         - Review TelecomCorp HomeLink Hub Pro logs for unauthorized commands
+         - Identify which specific devices are exhibiting unusual behavior in HomeLink system
+
+      2. **TelecomCorp Device Behavior Analysis** (10 minutes):
+         - Use TelecomCorp HomeLink management portal to review device command history
+         - Check for commands issued outside normal user patterns in HomeLink system
+         - Analyze timing patterns of suspicious device actions via TelecomCorp monitoring
+         - Review any recent firmware updates or new device additions in HomeLink portal
+
+      3. **TelecomCorp Network Traffic Investigation** (15 minutes):
+         - Monitor HomeLink protocol traffic for anomalies using TelecomCorp tools
          - Check CloudShield logs for blocked outbound connections from IoT VLAN
-         - Look for attempts to communicate with known malicious IoT botnets
-         - Verify all device authentication certificates are valid
-      4. **Source Identification**:
-         - Check if customer's mobile app or other authorized controllers show the commands
+         - Look for attempts to communicate with known malicious IoT botnets via CloudShield
+         - Verify all device authentication certificates are valid in TelecomCorp HomeLink system
+
+      4. **TelecomCorp Source Identification**:
+         - Check if customer's TelecomCorp mobile app shows the suspicious commands
          - Review access logs for HomeLink Hub Pro administrative interface
-         - Investigate if any device has been physically tampered with
-         - Analyze if compromise originated from customer's main network
-      5. **SecureNode Enhanced Response**:
+         - Investigate if any device has been physically tampered with using TelecomCorp diagnostics
+         - Analyze if compromise originated from customer's main network via SecureNode logs
+
+      5. **TelecomCorp SecureNode Enhanced Response**:
          - Implement stricter SecureNode isolation for affected devices
-         - Temporarily disable internet access for compromised devices
-         - Force firmware rollback on affected devices if possible
-         - Generate new HomeLink protocol security keys
-      6. **Resolution and Prevention**:
-         - Factory reset and re-provision compromised devices
+         - Temporarily disable internet access for compromised devices via SecureNode
+         - Force firmware rollback on affected devices if possible through HomeLink system
+         - Generate new HomeLink protocol security keys in TelecomCorp system
+
+      6. **TelecomCorp Resolution and Prevention**:
+         - Factory reset and re-provision compromised devices through HomeLink portal
          - Update SecureNode policies to prevent similar attacks
-         - Recommend customer change all IoT device default passwords
-         - Schedule follow-up security assessment in 48 hours
-      Document all device behaviors and remediation steps for security analysis.
+         - Recommend customer change all IoT device default passwords per TelecomCorp security guidelines
+         - Schedule follow-up security assessment in 48 hours via TelecomCorp system
+
+      Document all device behaviors and remediation steps in TelecomCorp security system.
+
   - question: |
       A customer's NetworkIQ dashboard shows a sudden spike in cryptocurrency mining traffic
       from multiple devices on their network. CloudShield blocked some connections but traffic continues.
       How should I respond to this potential cryptojacking incident?
     answer: |
-      For suspected cryptojacking incident with TelecomCorp security tools:
-      1. **Immediate Containment** (5 minutes):
+      For suspected cryptojacking incident using TelecomCorp security tools:
+
+      1. **TelecomCorp Immediate Containment** (5 minutes):
          - Enable emergency CloudShield strict mode to block all non-essential outbound traffic
-         - Identify source devices using NetworkIQ traffic analysis
+         - Identify source devices using TelecomCorp NetworkIQ traffic analysis
          - Check SecureNode logs for lateral movement between network segments
-         - Alert customer immediately about potential security breach
-      2. **Threat Assessment** (10 minutes):
-         - Analyze cryptocurrency wallet addresses and mining pool destinations
-         - Check for known cryptojacking malware signatures in traffic patterns
-         - Review recent device installations or software updates
-         - Verify if mining traffic correlates with specific user activities
-      3. **Advanced Investigation** (15 minutes):
+         - Alert customer immediately about potential security breach per TelecomCorp protocol
+
+      2. **TelecomCorp Threat Assessment** (10 minutes):
+         - Analyze cryptocurrency wallet addresses and mining pool destinations via CloudShield
+         - Check for known cryptojacking malware signatures in traffic patterns through NetworkIQ
+         - Review recent device installations or software updates in TelecomCorp monitoring
+         - Verify if mining traffic correlates with specific user activities via NetworkIQ
+
+      3. **TelecomCorp Advanced Investigation** (15 minutes):
          - Use NetworkIQ deep packet inspection for mining protocol detection
-         - Check DNS queries for suspicious cryptocurrency-related domains
-         - Analyze CPU and power consumption patterns from affected devices
+         - Check DNS queries for suspicious cryptocurrency-related domains through TelecomCorp monitoring
+         - Analyze CPU and power consumption patterns from affected devices via TelecomCorp diagnostics
          - Review CloudShield logs for initial compromise vectors
-      4. **Remediation Strategy**:
+
+      4. **TelecomCorp Remediation Strategy**:
          - **If confirmed cryptojacking**: Quarantine affected devices using SecureNode isolation
          - **If false positive**: Adjust CloudShield rules to allow legitimate traffic
          - **If widespread**: Engage TelecomCorp Security Operations Center for incident response
-         - **If customer-initiated**: Educate about network usage policies and security risks
-      5. **Prevention and Monitoring**:
+         - **If customer-initiated**: Educate about network usage policies per TelecomCorp guidelines
+
+      5. **TelecomCorp Prevention and Monitoring**:
          - Implement enhanced CloudShield rules for cryptocurrency traffic detection
          - Set up NetworkIQ alerts for unusual CPU-intensive network activity
-         - Recommend customer endpoint security assessment
-         - Schedule weekly monitoring for 30 days post-incident
-      Document all findings and coordinate with law enforcement if criminal activity suspected.
-  - question: |
-      An Enterprise customer reports that their VoicePrint biometric authentication on VoiceLink Pro
-      is failing intermittently. They suspect potential voice spoofing attacks targeting their executives.
-      What security investigation should I conduct?
-    answer: |
-      For suspected VoicePrint spoofing attacks on VoiceLink Pro:
-      1. **VoicePrint Security Analysis** (5 minutes):
-         - Access VoiceLink Pro biometric logs for failed authentication attempts
-         - Check for patterns in failed authentications (timing, source, targets)
-         - Verify VoicePrint algorithm version and security parameters
-         - Review any recent executive voice recordings or public appearances
-      2. **Audio Forensics Investigation** (15 minutes):
-         - Analyze audio samples from failed authentication attempts
-         - Check for signs of synthetic voice generation or deepfake audio
-         - Compare spectral analysis of suspicious calls with baseline voiceprints
-         - Look for compression artifacts or digital manipulation signatures
-      3. **Source Tracking and Intelligence** (10 minutes):
-         - Trace call origins and routing through NetworkIQ analytics
-         - Check if attacks correlate with public executive appearances or recordings
-         - Analyze timing patterns for social engineering campaign indicators
-         - Cross-reference with known voice spoofing attack vectors
-      4. **Enhanced Security Response**:
-         - **If spoofing confirmed**: Immediately update VoicePrint sensitivity parameters
-         - **If targeted campaign**: Enable multi-factor authentication for executive accounts
-         - **If ongoing threat**: Implement real-time voice anomaly detection
-         - **If sophisticated attack**: Engage federal cybersecurity authorities
-      5. **Executive Protection Measures**:
-         - Brief executives on voice spoofing risks and verification procedures
-         - Implement callback verification for sensitive VoiceLink Pro transactions
-         - Enhanced logging for all executive VoicePrint interactions
-         - Regular VoicePrint baseline updates to detect gradual spoofing attempts
-      Coordinate with corporate security and legal teams for potential criminal investigation.
+         - Recommend customer endpoint security assessment through TelecomCorp
+         - Schedule weekly monitoring for 30 days post-incident via TelecomCorp systems
+
+      Document all findings in TelecomCorp security incident system and coordinate with law enforcement if criminal activity suspected per TelecomCorp policy.
