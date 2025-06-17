@@ -4,3 +4,4 @@ venv/
 *.lock
 .DS_Store
 .idea/
+basic_trained_model/

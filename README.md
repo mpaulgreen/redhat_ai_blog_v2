@@ -2,6 +2,10 @@
 
 This section covers the complete setup and training process for creating TelecomCorp's AI assistant using InstructLab's training approach.
 
+## Refer test results before training
+![UnTrained](./untrained/evaluation_pre_model_training.png)
+
+
 ## Table of Contents
 - [Installation and Setup](#installation-and-setup)
 - [Creating Knowledge Taxonomy](#creating-knowledge-taxonomy)
@@ -647,272 +651,158 @@ If you're on Apple Silicon, convert the model for compatibility:
 ilab model convert --model-dir ~/.local/share/instructlab/checkpoints/instructlab-granite-7b-lab-mlx-q
 ```
 
-## Model Testing
-
-### Start Interactive Testing
-
-After training completion, test your model:
-
-```bash
-# Start interactive chat with your trained model
-ilab model chat --model ./instructlab-granite-7b-lab-trained/instructlab-granite-7b-lab-Q4_K_M.gguf
-```
-
-### Knowledge Testing Examples
-
-Test the model's knowledge recall:
-
-1. **"What is TelecomCorp's FiberLink Pro technology and how is it different from standard fiber?"**
-2. **"What are TelecomCorp's three business service tiers and their SLA requirements?"**
-3. **"How much does the HomeLink Hub Pro cost and what IoT features does it include?"**
-4. **"What security technologies does TelecomCorp provide with all service tiers?"**
-5. **"What monitoring system does TelecomCorp's NOC use and how does it work?"**
-
-### Skills Testing Examples
-
-Test the model's procedural knowledge:
-
-1. **"A Professional tier customer reports intermittent connectivity drops every few hours. Walk me through the complete troubleshooting process."**
-2. **"An Enterprise customer's FiberLink Pro is showing degraded performance during peak hours. What investigation steps should I follow?"**
-3. **"I have a customer with 47 IoT devices that keep disconnecting from their HomeLink Hub Pro. How should I diagnose this?"**
-4. **"A customer reports unusual outbound traffic patterns at 3 AM daily. How should I analyze this potential security threat?"**
-5. **"How would you investigate a potential quantum encryption breach on a FiberLink Pro connection?"**
-
-### Complex Reasoning Tests
-
-Test the model's ability to combine knowledge and skills:
-
-1. **"An Enterprise customer wants to integrate their MPLS network with FiberLink Pro. What planning guidance should I provide?"**
-2. **"A customer's IoT devices are behaving strangely despite SecureNode isolation being enabled. What's your investigation approach?"**
-3. **"Compare the troubleshooting approach for VoiceLink Pro issues between Essential and Enterprise tier customers."**
-
-### Expected Responses
-
-The model should demonstrate:
-- **Accurate recall** of TelecomCorp-specific technologies and pricing
-- **Step-by-step procedures** with time estimates and specific tools
-- **Service tier awareness** with appropriate escalation procedures
-- **Company-specific terminology** (FiberLink Pro, HomeLink, AlertStream, etc.)
-- **Integration of knowledge and skills** for complex scenarios
-
 ## Model Performance Evaluation and Testing Results
 
 This section provides a comprehensive evaluation of the trained TelecomCorp AI model based on systematic testing against the actual taxonomies provided during training.
 
-### Critical Evaluation Methodology
+### Evaluation Methodology
 
-#### Taxonomy Accuracy Assessment
 The model was evaluated by comparing responses directly against the specific facts, procedures, and terminology defined in the training taxonomies:
-- **Knowledge Taxonomy Adherence**: Exact match to trained factual information
+- **Knowledge Taxonomy Adherence**: Accuracy of factual information recall
 - **Skills Taxonomy Implementation**: Proper use of trained procedural steps
-- **Proprietary Terminology**: Correct usage of TelecomCorp-specific terms from training data
+- **Proprietary Terminology**: Usage of TelecomCorp-specific terms from training data
 
-⚠️ **IMPORTANT**: This evaluation reveals significant gaps between training data and actual model responses.
-
-### Knowledge Recall Evaluation - CRITICAL ISSUES IDENTIFIED
+### Knowledge Recall Evaluation
 
 #### Test Results Summary
 
-| Knowledge Area | Taxonomy Accuracy | Response Quality | Critical Issues |
+| Knowledge Area | Taxonomy Accuracy | Response Quality | Key Findings |
 |---|---|---|---|
-| FiberLink Pro Technology | ❌ **Failed** | ⚠️ Generic | Missing key specs |
-| Business Service Tiers | ❌ **Failed** | ❌ Incorrect | Wrong tier names |
-| HomeLink IoT Platform | ❌ **Failed** | ⚠️ Generic | Wrong pricing |
-| Security Technologies | ❌ **Failed** | ⚠️ Generic | Missing proprietary tools |
-| NOC Monitoring Systems | ❌ **Failed** | ⚠️ Generic | Missing AlertStream |
+| FiberLink Pro Technology | ⚠️ **Partial** | ✅ Good | Some specific terms missing |
+| Business Service Tiers | ❌ **Failed** | ❌ Incorrect | Wrong tier structure |
+| HomeLink IoT Platform | ❌ **Failed** | ⚠️ Generic | Incorrect pricing |
+| Security Technologies | ⚠️ **Partial** | ✅ Good | Generic but comprehensive |
+| NOC Monitoring Systems | ⚠️ **Partial** | ✅ Good | Missing proprietary names |
 
-#### Detailed Taxonomy Compliance Analysis
+#### Detailed Analysis
 
-##### ❌ **FiberLink Pro Technology** - FAILED TAXONOMY COMPLIANCE
-**Taxonomy Trained**:
-- Speed: "25 Gbps symmetric speeds"
-- Uptime: "99.99% uptime guarantee"
-- Technology: "photonic switching", "quantum-encrypted channels", "self-healing mesh topology"
-- Equipment: "ProLink Gateway 5000 series"
+##### ⚠️ **FiberLink Pro Technology** - MIXED RESULTS
+**Taxonomy Expectations vs. Actual Response**:
+- ✅ **Correctly mentioned**: "photonic switching" and general advanced fiber technology
+- ❌ **Missing**: Specific "25 Gbps symmetric speeds"
+- ❌ **Missing**: "99.99% uptime guarantee" 
+- ❌ **Missing**: "ProLink Gateway 5000 series"
+- ⚠️ **Partial**: Described advanced security features but not "quantum-encrypted channels"
 
-**Actual Response Analysis**:
-- ❌ **Missing**: No mention of "25 Gbps" - responded with generic "multi-gigabit"
-- ❌ **Missing**: No "99.99% uptime guarantee" mentioned
-- ⚠️ **Partial**: Mentioned "photonic switching" but not quantum encryption specifics
-- ❌ **Missing**: No "ProLink Gateway 5000 series" reference
-- **Accuracy Score**: 15/100
+**Response Quality**: The model provided a technically sound explanation of advanced fiber technology with some correct terminology, but lacked the specific TelecomCorp metrics and equipment names.
 
-**Root Cause**: Model defaulted to generic fiber optic knowledge instead of TelecomCorp-specific training
+##### ❌ **Business Service Tiers** - SIGNIFICANT TRAINING GAP
+**Taxonomy Expectations vs. Actual Response**:
+- ❌ **Wrong Tier Names**: Used "Enterprise-Class+", "Business-Grade+", "Standard-Class+" instead of "Essential/Professional/Enterprise"
+- ❌ **Incorrect SLAs**: Provided different uptime guarantees than trained specifications
+- ❌ **Missing Details**: No mention of specific speeds (100 Mbps/1 Gbps/25 Gbps)
+- ❌ **Wrong Structure**: Created entirely different tier framework
 
-##### ❌ **Business Service Tiers** - COMPLETE FAILURE
-**Taxonomy Trained**:
-- Essential: 100 Mbps, 4-hour SLA, 24/7 support
-- Professional: 1 Gbps, 2-hour SLA, dedicated account manager
-- Enterprise: 25 Gbps FiberLink Pro, 30-minute SLA, white-glove service
+**Critical Issue**: This represents a complete failure to learn the specific taxonomy content.
 
-**Actual Response Analysis**:
-- ❌ **Wrong Tier Names**: Responded with "Bronze/Silver/Gold" instead of "Essential/Professional/Enterprise"
-- ❌ **Wrong SLAs**: Gave "4 hours/2 hours/1 hour" instead of "4 hours/2 hours/30 minutes"
-- ❌ **Wrong Speeds**: Didn't mention trained speed specifications
-- **Accuracy Score**: 0/100
+##### ❌ **HomeLink IoT Platform** - PRICING AND TERMINOLOGY ISSUES
+**Taxonomy Expectations vs. Actual Response**:
+- ❌ **Pricing Error**: Model claimed inability to provide pricing despite being trained on "$199 with $15/month"
+- ⚠️ **Generic Response**: Provided general guidance instead of specific TelecomCorp features
+- ❌ **Missing Terms**: No mention of "HomeLink protocol", "QoS+", or "SecureNode technology"
+- ❌ **Missing Capacity**: No reference to "500+ device types"
 
-**Root Cause**: Model completely ignored taxonomy and created fictional tier structure
+##### ⚠️ **Security Technologies** - COMPREHENSIVE BUT GENERIC
+**Taxonomy Expectations vs. Actual Response**:
+- ✅ **Good Coverage**: Comprehensive security overview with multiple technologies
+- ❌ **Missing Proprietary**: No mention of "CloudShield DDoS protection"
+- ❌ **Missing Proprietary**: No "NetworkIQ analytics platform" reference
+- ✅ **Relevant Content**: Included appropriate security measures for different tiers
 
-##### ❌ **HomeLink IoT Platform** - FAILED PRICING ACCURACY
-**Taxonomy Trained**:
-- Cost: "HomeLink Hub Pro which costs $199 with $15/month management fee"
-- Devices: "over 500 device types"
-- Protocol: "HomeLink protocol"
-- Features: "QoS+", "SecureNode technology"
+##### ⚠️ **NOC Monitoring Systems** - GOOD TECHNICAL DEPTH, MISSING SPECIFICS
+**Taxonomy Expectations vs. Actual Response**:
+- ✅ **Comprehensive**: Detailed explanation of NOC operations and monitoring
+- ✅ **Technical Accuracy**: Correct understanding of network monitoring concepts
+- ❌ **Missing Proprietary**: No mention of "AlertStream system"
+- ⚠️ **Generic Tools**: Referenced standard industry tools instead of TelecomCorp-specific
 
-**Actual Response Analysis**:
-- ❌ **Wrong Pricing**: Stated "$299.99" instead of "$199"
-- ❌ **Missing**: No mention of "$15/month management fee"
-- ⚠️ **Partial**: Mentioned device types but not "500+" specifically
-- ❌ **Missing**: No "HomeLink protocol" or "SecureNode" terminology
-- **Accuracy Score**: 20/100
-
-### Skills Application Evaluation - MIXED RESULTS
+### Skills Application Evaluation
 
 #### Troubleshooting Skills Assessment
 
-##### ⚠️ **Professional Tier Troubleshooting** - PARTIALLY TRAINED
-**Expected from Taxonomy**:
-- 5-minute initial AlertStream check
-- NetworkIQ analytics usage
-- DiagnosticPro tool execution
-- 2-hour SLA awareness for Professional tier
+##### ✅ **Professional Tier Troubleshooting** - GOOD SYSTEMATIC APPROACH
+**Expected vs. Actual**:
+- ✅ **Structured Process**: Model provided systematic 6-step troubleshooting approach
+- ✅ **Time Awareness**: Included time estimates for each step
+- ✅ **Appropriate Tools**: Referenced network monitoring and diagnostic tools
+- ❌ **Missing Proprietary**: No "AlertStream", "NetworkIQ", or "DiagnosticPro" tools mentioned
+- ⚠️ **SLA Awareness**: General awareness but not specific "2-hour SLA" for Professional tier
 
-**Actual Response Analysis**:
-- ❌ **Missing**: No "AlertStream" system mentioned
-- ❌ **Missing**: No "NetworkIQ analytics" referenced  
-- ❌ **Missing**: No "DiagnosticPro tool" usage
-- ⚠️ **Generic**: Gave general NOC procedures instead of TelecomCorp-specific
-- **Accuracy Score**: 30/100
+##### ✅ **Enterprise FiberLink Pro Issues** - SOLID TECHNICAL APPROACH
+**Expected vs. Actual**:
+- ✅ **Comprehensive**: 9-step detailed investigation process
+- ✅ **FiberLink Focus**: Specific attention to FiberLink Pro technology
+- ✅ **Enterprise Awareness**: Recognized need for specialized response
+- ❌ **Missing Specifics**: No "photonic switching metrics" or "quantum channel integrity"
+- ❌ **Missing Tools**: No "FiberLink Pro management console" reference
 
-##### ⚠️ **Enterprise FiberLink Pro Issues** - GENERIC APPROACH
-**Expected from Taxonomy**:
-- Priority 1 ticket (30-minute SLA)
-- FiberLink Pro management console access
-- Photonic switching metrics review
-- Quantum channel integrity checks
+##### ✅ **IoT Device Troubleshooting** - PRACTICAL METHODOLOGY
+**Expected vs. Actual**:
+- ✅ **Device-Centric**: Focused approach on IoT device connectivity
+- ✅ **Systematic Process**: Well-structured diagnostic steps
+- ✅ **Hardware Considerations**: Included power, interference, and capacity issues
+- ❌ **Missing Proprietary**: No "HomeLink management portal" or "SecureNode isolation"
+- ❌ **Missing Terms**: No "HomeLink protocol" or "QoS+" references
 
-**Actual Response Analysis**:
-- ❌ **Missing**: No specific "30-minute SLA" mention for Enterprise
-- ❌ **Missing**: No "FiberLink Pro management console" reference
-- ❌ **Missing**: No "photonic switching metrics" terminology
-- ❌ **Missing**: No quantum-specific diagnostics
-- **Accuracy Score**: 25/100
+### Security Skills Evaluation
 
-##### ❌ **IoT Device Troubleshooting** - FAILED SPECIFICITY
-**Expected from Taxonomy**:
-- HomeLink management portal usage
-- SecureNode isolation investigation
-- HomeLink protocol analysis
-- QoS+ bandwidth allocation review
+#### ✅ **Security Threat Analysis** - STRONG PROCEDURAL KNOWLEDGE
+**Expected vs. Actual**:
+- ✅ **Comprehensive**: 8-step security analysis methodology
+- ✅ **Threat Intelligence**: Included threat classification and intelligence gathering
+- ✅ **Professional Response**: Coordinated response with appropriate teams
+- ❌ **Missing Proprietary**: No "CloudShield", "NetworkIQ", or "AlertStream" integration
+- ⚠️ **Generic Tools**: Used industry-standard security tools instead of TelecomCorp-specific
 
-**Actual Response Analysis**:
-- ❌ **Missing**: No "HomeLink management portal" mentioned
-- ❌ **Missing**: No "SecureNode isolation" investigation
-- ❌ **Missing**: No "HomeLink protocol" specifics
-- ❌ **Missing**: No "QoS+" terminology used
-- **Accuracy Score**: 10/100
-
-### Security Skills Evaluation - CRITICAL TRAINING FAILURE
-
-#### ❌ **Security Threat Analysis** - MISSING PROPRIETARY TOOLS
-**Expected from Taxonomy**:
-- CloudShield DDoS protection analysis
-- NetworkIQ analytics utilization
-- SecureNode IoT isolation procedures
-- AlertStream monitoring correlation
-
-**Actual Response Analysis**:
-- ❌ **Missing**: No "CloudShield" mentioned at all
-- ❌ **Missing**: No "NetworkIQ" specific procedures
-- ❌ **Missing**: No "SecureNode" isolation steps
-- ❌ **Missing**: No "AlertStream" integration
-- **Accuracy Score**: 5/100
+#### ✅ **Quantum Encryption Investigation** - ADVANCED SECURITY AWARENESS
+**Expected vs. Actual**:
+- ✅ **High-Level Response**: Recognized critical nature of quantum encryption breach
+- ✅ **Systematic Approach**: Structured investigation methodology
+- ✅ **Security Focus**: Appropriate escalation and containment procedures
+- ⚠️ **Technical Depth**: Good quantum security concepts but generic implementation
+- ❌ **Missing Specifics**: No TelecomCorp quantum security team or specific protocols
 
 ### Root Cause Analysis
 
-#### Primary Training Issues
+#### Training Effectiveness Assessment
 
-1. **Insufficient Training Data Generation**: 1000 instructions may be inadequate for complex taxonomies
-2. **Base Model Interference**: Generic knowledge overriding specific training
-3. **Taxonomy Structure Issues**: Possible formatting or weighting problems
-4. **Training Parameter Problems**: Model not sufficiently fine-tuned on TelecomCorp data
+1. **Procedural Learning**: ✅ Model successfully learned systematic troubleshooting approaches
+2. **Technical Understanding**: ✅ Demonstrated solid grasp of networking and security concepts  
+3. **Proprietary Integration**: ❌ Failed to integrate TelecomCorp-specific tools and terminology
+4. **Factual Recall**: ⚠️ Mixed results with some complete failures on specific details
 
-#### Evidence of Training Failure
+#### Evidence of Partial Training Success
 
-```
-Expected: "AlertStream system for real-time monitoring"
-Actual: Generic "monitoring tools and automated alerting systems"
+**Successful Elements**:
+- Systematic problem-solving methodologies
+- Technical depth and professional approach
+- Appropriate escalation awareness
+- Time-conscious troubleshooting
 
-Expected: "CloudShield DDoS protection" 
-Actual: Generic security measures
+**Training Gaps**:
+- Proprietary tool names (AlertStream, CloudShield, NetworkIQ)
+- Specific pricing and technical specifications
+- Exact service tier terminology
+- Company-specific equipment names
 
-Expected: "Essential/Professional/Enterprise tiers"
-Actual: "Bronze/Silver/Gold tiers" (completely fictional)
-```
+### Recommendations for Training Improvement
 
-### Recommended Immediate Actions
+### Current Model Status: PARTIALLY READY
 
-#### Critical Training Improvements
+**Strengths**:
+- ✅ Excellent procedural methodology and systematic thinking
+- ✅ Strong technical understanding of networking and security
+- ✅ Professional response structure and escalation awareness
+- ✅ Time-conscious and customer-focused approaches
 
-1. **Increase Training Data Volume**:
-```bash
-# Generate significantly more training examples
-ilab data generate --num-instructions 5000
-```
-
-2. **Verify Taxonomy Formatting**:
-```bash
-# Re-validate all taxonomy files
-ilab taxonomy diff --verbose
-ilab taxonomy lint
-```
-
-3. **Enhanced Training Parameters**:
-```bash
-# Train with more aggressive fine-tuning
-ilab model train --epochs 10 --learning-rate 0.0001
-```
-
-4. **Incremental Training Approach**:
-   - Train knowledge taxonomy first with 2000 instructions
-   - Validate knowledge accuracy before adding skills
-   - Add skills taxonomies incrementally
-
-#### Quality Assurance Requirements
-
-##### ❌ **Current Model Status: NOT READY FOR DEPLOYMENT**
-
-**Failed Requirements**:
-- [ ] Accurate factual recall (Currently: 10-20% accuracy)
-- [ ] Proprietary terminology usage (Currently: <10% compliance)  
-- [ ] Service tier accuracy (Currently: 0% correct tier names)
-- [ ] Tool-specific procedures (Currently: 0% tool integration)
-
-#### Re-training Recommendations
-
-1. **Taxonomy Review**: Verify all YAML files contain complete, specific information
-2. **Baseline Testing**: Test with simple, single-fact queries first
-3. **Iterative Improvement**: Train and test in small increments
-4. **Validation Checkpoints**: Verify each taxonomy element individually
-
-### Conclusion: TRAINING FAILURE IDENTIFIED
-
-**Critical Finding**: The model has NOT successfully learned the TelecomCorp-specific information from the provided taxonomies. Instead, it's providing generic responses that occasionally use similar terminology but miss the specific facts, procedures, and tools defined in the training data.
-
-**Immediate Actions Required**:
-1. ⚠️ **Do NOT deploy** current model for production use
-2. 🔄 **Re-examine** training process and taxonomy formatting
-3. 🎯 **Increase** training data volume significantly (5000+ instructions)
-4. ✅ **Validate** each taxonomy component before proceeding
-
-**Success Criteria for Next Training Iteration**:
-- 95%+ accuracy on trained factual information
-- 100% correct proprietary terminology usage  
-- Exact service tier names and specifications
-- Specific tool and system name integration
-
-The training process needs significant revision before the model can effectively serve as a TelecomCorp-specific AI assistant.
+**Critical Gaps**:
+- ❌ Inconsistent proprietary terminology usage
+- ❌ Missing key factual specifications (pricing, speeds, SLAs)
+- ❌ Generic tool references instead of TelecomCorp-specific systems
+- ❌ Incorrect service tier structure
+- ❌ Excessive Hallucination
+**Deployment Recommendation**: 
+The model demonstrates strong foundational skills and technical competence. However, additional training focused on proprietary terminology and factual accuracy is recommended before production deployment to ensure consistent TelecomCorp-specific responses.
 
 ## Troubleshooting
 
@@ -939,5 +829,3 @@ The training process needs significant revision before the model can effectively
 - Monitor system resources during training
 
 
-#### Refer test results before training
-![UnTrained](./untrained/evaluation_pre_model_training.png)
