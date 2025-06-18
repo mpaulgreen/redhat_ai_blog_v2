@@ -1,4 +1,4 @@
-# Step 1: InstructLab Training - Knowledge and Skills Development
+# InstructLab Training - Knowledge and Skills Development
 
 This section covers the complete setup and training process for creating TelecomCorp's AI assistant using InstructLab's training approach.
 
@@ -651,6 +651,47 @@ If you're on Apple Silicon, convert the model for compatibility:
 ilab model convert --model-dir ~/.local/share/instructlab/checkpoints/instructlab-granite-7b-lab-mlx-q
 ```
 
+## Model Testing
+
+After training completion, test your model's knowledge and capabilities:
+
+### Knowledge Testing Examples
+
+Test the model's knowledge recall:
+
+1. **"What is TelecomCorp's FiberLink Pro technology and how is it different from standard fiber?"**
+2. **"What are TelecomCorp's three business service tiers and their SLA requirements?"**
+3. **"How much does the HomeLink Hub Pro cost and what IoT features does it include?"**
+4. **"What security technologies does TelecomCorp provide with all service tiers?"**
+5. **"What monitoring system does TelecomCorp's NOC use and how does it work?"**
+
+### Skills Testing Examples
+
+Test the model's procedural knowledge:
+
+1. **"A Professional tier customer reports intermittent connectivity drops every few hours. Walk me through the complete troubleshooting process."**
+2. **"An Enterprise customer's FiberLink Pro is showing degraded performance during peak hours. What investigation steps should I follow?"**
+3. **"I have a customer with 47 IoT devices that keep disconnecting from their HomeLink Hub Pro. How should I diagnose this?"**
+4. **"A customer reports unusual outbound traffic patterns at 3 AM daily. How should I analyze this potential security threat?"**
+5. **"How would you investigate a potential quantum encryption breach on a FiberLink Pro connection?"**
+
+### Complex Reasoning Tests
+
+Test the model's ability to combine knowledge and skills:
+
+1. **"An Enterprise customer wants to integrate their MPLS network with FiberLink Pro. What planning guidance should I provide?"**
+2. **"A customer's IoT devices are behaving strangely despite SecureNode isolation being enabled. What's your investigation approach?"**
+3. **"Compare the troubleshooting approach for VoiceLink Pro issues between Essential and Enterprise tier customers."**
+
+### Expected Responses
+
+The model should demonstrate:
+* **Accurate recall** of TelecomCorp-specific technologies and pricing
+* **Step-by-step procedures** with time estimates and specific tools
+* **Service tier awareness** with appropriate escalation procedures
+* **Company-specific terminology** (FiberLink Pro, HomeLink, AlertStream, etc.)
+* **Integration of knowledge and skills** for complex scenarios
+
 ## Model Performance Evaluation and Testing Results
 
 This section provides a comprehensive evaluation of the trained TelecomCorp AI model based on systematic testing against the actual taxonomies provided during training.
@@ -828,5 +869,3 @@ The model demonstrates strong foundational skills and technical competence. Howe
 - Check available RAM (minimum 16GB recommended)
 - Ensure sufficient disk space (100GB+)
 - Monitor system resources during training
-
-
