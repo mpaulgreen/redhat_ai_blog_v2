@@ -655,6 +655,10 @@ ilab model convert --model-dir ~/.local/share/instructlab/checkpoints/instructla
 
 After training completion, test your model's knowledge and capabilities:
 
+```bash
+ilab model chat --model ./instructlab-granite-7b-lab-trained/instructlab-granite-7b-lab-Q4_K_M.gguf 
+```
+
 ### Knowledge Testing Examples
 
 Test the model's knowledge recall:
