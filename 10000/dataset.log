@@ -1,0 +1,212 @@
+ilab data generate --pipeline full --sdg-scale-factor 333
+INFO 2025-06-24 18:35:43,821 instructlab.process.process:300: Started subprocess with PID 1. Logs are being written to /var/home/cloud-user/.local/share/instructlab/logs/generation/generation-097e056a-512a-11f0-af08-068614d76203.log.
+INFO 2025-06-24 18:35:45,535 instructlab.model.backends.llama_cpp:126: Trying to connect to model server at http://127.0.0.1:8000/v1
+llama_new_context_with_model: n_ctx_per_seq (4096) < n_ctx_train (32768) -- the full capacity of the model will not be utilized
+WARNING 2025-06-24 18:35:51,366 instructlab:188: Disabling SDG batching - unsupported with llama.cpp serving
+INFO 2025-06-24 18:35:52,078 numexpr.utils:149: Note: NumExpr detected 48 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 16.
+INFO 2025-06-24 18:35:52,078 numexpr.utils:162: NumExpr defaulting to 16 threads.
+INFO 2025-06-24 18:35:54,045 datasets:54: PyTorch version 2.6.0 available.
+INFO 2025-06-24 18:35:55,502 instructlab:206: Generating synthetic data using 'full' pipeline, '/var/home/cloud-user/.cache/instructlab/models/mistral-7b-instruct-v0.2.Q4_K_M.gguf' model, '/var/home/cloud-user/.local/share/instructlab/taxonomy' taxonomy, against http://127.0.0.1:60093/v1 server
+INFO 2025-06-24 18:35:55,502 root:356: Converting taxonomy to samples
+INFO 2025-06-24 18:35:57,679 instructlab.sdg.utils.taxonomy:143: Processing files...
+INFO 2025-06-24 18:35:57,679 instructlab.sdg.utils.taxonomy:148: Pattern 'README.md' matched 1 files.
+INFO 2025-06-24 18:35:57,679 instructlab.sdg.utils.taxonomy:152: Processing file: /var/home/cloud-user/.local/share/instructlab/datasets/2025-06-24_183543/preprocessed_2025-06-24T18_35_55/documents/knowledge_telecomcorp_41nnwfs_/README.md
+INFO 2025-06-24 18:35:57,679 instructlab.sdg.utils.taxonomy:156: Added file path: /var/home/cloud-user/.local/share/instructlab/datasets/2025-06-24_183543/preprocessed_2025-06-24T18_35_55/documents/knowledge_telecomcorp_41nnwfs_/README.md
+[2025-06-24 18:36:16,958] [INFO] [real_accelerator.py:222:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+INFO 2025-06-24 18:36:19,457 instructlab.sdg.utils.chunkers:144: Found the docling models
+You are using the default legacy behaviour of the <class 'transformers.models.llama.tokenization_llama_fast.LlamaTokenizerFast'>. This is expected, and simply means that the `legacy` (previous) behavior will be used so nothing changes for you. If you want to use the new behaviour, set `legacy=False`. This should only be set if you understand what it means, and thoroughly read the reason why this was added as explained in https://github.com/huggingface/transformers/pull/24565 - if you loaded a llama tokenizer from a GGUF file you can ignore this message.
+Merges were not in checkpoint, building merges on the fly.
+100%|##########| 32000/32000 [00:39<00:00, 814.31it/s]
+INFO 2025-06-24 18:37:03,673 instructlab.sdg.utils.chunkers:249: Successfully loaded tokenizer from: /var/home/cloud-user/.cache/instructlab/models/mistral-7b-instruct-v0.2.Q4_K_M.gguf
+INFO 2025-06-24 18:37:03,848 docling.document_converter:269: Going to convert document batch...
+INFO 2025-06-24 18:37:03,848 docling.document_converter:304: Initializing pipeline for SimplePipeline with options hash 4cc01982ae99b46a2a63fcda46c47c35
+INFO 2025-06-24 18:37:03,848 docling.pipeline.base_pipeline:39: Processing document README.md
+INFO 2025-06-24 18:37:06,033 docling.document_converter:284: Finished converting document README.md in 2.19 sec.
+INFO 2025-06-24 18:37:06,417 instructlab.sdg.generate_data:405: Taxonomy converted to samples and written to /var/home/cloud-user/.local/share/instructlab/datasets/2025-06-24_183543/preprocessed_2025-06-24T18_35_55
+INFO 2025-06-24 18:37:06,439 instructlab.sdg.generate_data:441: Synthesizing new instructions. If you aren't satisfied with the generated instructions, interrupt training (Ctrl-C) and try adjusting your YAML files. Adding more examples may help.
+INFO 2025-06-24 18:37:06,539 instructlab.sdg.checkpointing:59: No existing checkpoints found in /var/home/cloud-user/.local/share/instructlab/datasets/checkpoints/compositional_skills_telecomcorp_troubleshooting, generating from scratch
+INFO 2025-06-24 18:37:06,539 instructlab.sdg.pipeline:156: Running pipeline single-threaded
+INFO 2025-06-24 18:37:06,544 instructlab.sdg.blocks.llmblock:56: LLM server supports batched inputs: False
+INFO 2025-06-24 18:37:06,544 instructlab.sdg.pipeline:199: Running block: gen_questions
+INFO 2025-06-24 18:37:06,544 instructlab.sdg.pipeline:203: Batching disabled; processing block 'gen_questions' single-threaded.
+gen_questions Prompt Generation:   0%|          | 0/5 [00:00<?, ?it/s]/opt/app-root/lib64/python3.11/site-packages/llama_cpp/llama.py:1237: RuntimeWarning: Detected duplicate leading "<s>" in prompt, this will likely reduce response quality, consider removing it...
+  warnings.warn(
+gen_questions Prompt Generation: 100%|##########| 5/5 [03:50<00:00, 46.11s/it]
+INFO 2025-06-24 18:40:57,100 instructlab.sdg.pipeline:199: Running block: eval_questions
+INFO 2025-06-24 18:40:57,101 instructlab.sdg.pipeline:203: Batching disabled; processing block 'eval_questions' single-threaded.
+eval_questions Prompt Generation: 100%|##########| 250/250 [06:52<00:00,  1.65s/it]
+INFO 2025-06-24 18:47:49,845 instructlab.sdg.pipeline:199: Running block: filter_questions
+INFO 2025-06-24 18:47:49,846 instructlab.sdg.pipeline:203: Batching disabled; processing block 'filter_questions' single-threaded.
+Map (num_proc=8): 100%|##########| 249/249 [00:00<00:00, 811.08 examples/s]
+Filter (num_proc=8): 100%|##########| 249/249 [00:00<00:00, 1277.70 examples/s]
+INFO 2025-06-24 18:47:50,806 instructlab.sdg.pipeline:199: Running block: gen_responses
+INFO 2025-06-24 18:47:50,806 instructlab.sdg.pipeline:203: Batching disabled; processing block 'gen_responses' single-threaded.
+gen_responses Prompt Generation: 100%|##########| 246/246 [29:23<00:00,  7.17s/it]
+INFO 2025-06-24 19:17:13,961 instructlab.sdg.pipeline:199: Running block: evaluate_qa_pair
+INFO 2025-06-24 19:17:13,961 instructlab.sdg.pipeline:203: Batching disabled; processing block 'evaluate_qa_pair' single-threaded.
+evaluate_qa_pair Prompt Generation: 100%|##########| 246/246 [11:29<00:00,  2.80s/it]
+INFO 2025-06-24 19:28:43,641 instructlab.sdg.pipeline:199: Running block: filter_qa_pair
+INFO 2025-06-24 19:28:43,642 instructlab.sdg.pipeline:203: Batching disabled; processing block 'filter_qa_pair' single-threaded.
+Map (num_proc=8): 100%|##########| 246/246 [00:00<00:00, 758.27 examples/s]
+Filter (num_proc=8): 100%|##########| 246/246 [00:00<00:00, 1212.39 examples/s]
+INFO 2025-06-24 19:28:44,642 instructlab.sdg.generate_data:478: Generated 246 samples
+INFO 2025-06-24 19:28:44,739 instructlab.sdg.checkpointing:59: No existing checkpoints found in /var/home/cloud-user/.local/share/instructlab/datasets/checkpoints/compositional_skills_telecomcorp_security, generating from scratch
+INFO 2025-06-24 19:28:44,739 instructlab.sdg.pipeline:156: Running pipeline single-threaded
+INFO 2025-06-24 19:28:44,743 instructlab.sdg.pipeline:199: Running block: gen_questions
+INFO 2025-06-24 19:28:44,743 instructlab.sdg.pipeline:203: Batching disabled; processing block 'gen_questions' single-threaded.
+gen_questions Prompt Generation: 100%|##########| 5/5 [03:19<00:00, 39.80s/it]
+INFO 2025-06-24 19:32:03,784 instructlab.sdg.pipeline:199: Running block: eval_questions
+INFO 2025-06-24 19:32:03,784 instructlab.sdg.pipeline:203: Batching disabled; processing block 'eval_questions' single-threaded.
+eval_questions Prompt Generation: 100%|##########| 186/186 [05:26<00:00,  1.75s/it]
+INFO 2025-06-24 19:37:29,996 instructlab.sdg.pipeline:199: Running block: filter_questions
+INFO 2025-06-24 19:37:29,996 instructlab.sdg.pipeline:203: Batching disabled; processing block 'filter_questions' single-threaded.
+Map (num_proc=8): 100%|##########| 186/186 [00:00<00:00, 613.56 examples/s]
+Filter (num_proc=8): 100%|##########| 186/186 [00:00<00:00, 936.75 examples/s] 
+INFO 2025-06-24 19:37:30,954 instructlab.sdg.pipeline:199: Running block: gen_responses
+INFO 2025-06-24 19:37:30,954 instructlab.sdg.pipeline:203: Batching disabled; processing block 'gen_responses' single-threaded.
+gen_responses Prompt Generation: 100%|##########| 186/186 [27:10<00:00,  8.76s/it]
+INFO 2025-06-24 20:04:41,235 instructlab.sdg.pipeline:199: Running block: evaluate_qa_pair
+INFO 2025-06-24 20:04:41,235 instructlab.sdg.pipeline:203: Batching disabled; processing block 'evaluate_qa_pair' single-threaded.
+evaluate_qa_pair Prompt Generation: 100%|##########| 186/186 [08:25<00:00,  2.72s/it]
+INFO 2025-06-24 20:13:06,760 instructlab.sdg.pipeline:199: Running block: filter_qa_pair
+INFO 2025-06-24 20:13:06,760 instructlab.sdg.pipeline:203: Batching disabled; processing block 'filter_qa_pair' single-threaded.
+Map (num_proc=8): 100%|##########| 186/186 [00:00<00:00, 582.00 examples/s]
+Filter (num_proc=8): 100%|##########| 186/186 [00:00<00:00, 928.43 examples/s] 
+INFO 2025-06-24 20:13:07,751 instructlab.sdg.generate_data:478: Generated 186 samples
+INFO 2025-06-24 20:13:07,846 instructlab.sdg.checkpointing:59: No existing checkpoints found in /var/home/cloud-user/.local/share/instructlab/datasets/checkpoints/compositional_skills_telecomcorp_grounding, generating from scratch
+INFO 2025-06-24 20:13:07,846 instructlab.sdg.pipeline:156: Running pipeline single-threaded
+INFO 2025-06-24 20:13:07,849 instructlab.sdg.pipeline:199: Running block: gen_questions
+INFO 2025-06-24 20:13:07,849 instructlab.sdg.pipeline:203: Batching disabled; processing block 'gen_questions' single-threaded.
+gen_questions Prompt Generation: 100%|##########| 8/8 [02:23<00:00, 18.00s/it]
+INFO 2025-06-24 20:15:31,867 instructlab.sdg.pipeline:199: Running block: eval_questions
+INFO 2025-06-24 20:15:31,867 instructlab.sdg.pipeline:203: Batching disabled; processing block 'eval_questions' single-threaded.
+eval_questions Prompt Generation: 100%|##########| 223/223 [05:45<00:00,  1.55s/it]
+INFO 2025-06-24 20:21:17,645 instructlab.sdg.pipeline:199: Running block: filter_questions
+INFO 2025-06-24 20:21:17,645 instructlab.sdg.pipeline:203: Batching disabled; processing block 'filter_questions' single-threaded.
+Map (num_proc=8): 100%|##########| 223/223 [00:00<00:00, 767.77 examples/s]
+Filter (num_proc=8): 100%|##########| 223/223 [00:00<00:00, 1136.47 examples/s]
+INFO 2025-06-24 20:21:18,589 instructlab.sdg.pipeline:199: Running block: gen_responses
+INFO 2025-06-24 20:21:18,589 instructlab.sdg.pipeline:203: Batching disabled; processing block 'gen_responses' single-threaded.
+gen_responses Prompt Generation: 100%|##########| 220/220 [12:36<00:00,  3.44s/it]
+INFO 2025-06-24 20:33:54,942 instructlab.sdg.pipeline:199: Running block: evaluate_qa_pair
+INFO 2025-06-24 20:33:54,942 instructlab.sdg.pipeline:203: Batching disabled; processing block 'evaluate_qa_pair' single-threaded.
+evaluate_qa_pair Prompt Generation: 100%|##########| 220/220 [09:11<00:00,  2.51s/it]
+INFO 2025-06-24 20:43:06,952 instructlab.sdg.pipeline:199: Running block: filter_qa_pair
+INFO 2025-06-24 20:43:06,952 instructlab.sdg.pipeline:203: Batching disabled; processing block 'filter_qa_pair' single-threaded.
+Map (num_proc=8): 100%|##########| 220/220 [00:00<00:00, 729.19 examples/s]
+Filter (num_proc=8): 100%|##########| 220/220 [00:00<00:00, 1119.77 examples/s]
+INFO 2025-06-24 20:43:07,920 instructlab.sdg.generate_data:478: Generated 220 samples
+INFO 2025-06-24 20:43:08,026 instructlab.sdg.checkpointing:59: No existing checkpoints found in /var/home/cloud-user/.local/share/instructlab/datasets/checkpoints/knowledge_telecomcorp, generating from scratch
+INFO 2025-06-24 20:43:08,026 instructlab.sdg.pipeline:156: Running pipeline single-threaded
+INFO 2025-06-24 20:43:08,026 instructlab.sdg.pipeline:199: Running block: duplicate_document_col
+INFO 2025-06-24 20:43:08,027 instructlab.sdg.pipeline:203: Batching disabled; processing block 'duplicate_document_col' single-threaded.
+INFO 2025-06-24 20:43:08,033 instructlab.sdg.pipeline:199: Running block: gen_spellcheck
+INFO 2025-06-24 20:43:08,033 instructlab.sdg.pipeline:203: Batching disabled; processing block 'gen_spellcheck' single-threaded.
+gen_spellcheck Prompt Generation: 100%|##########| 186/186 [18:46<00:00,  6.05s/it]
+INFO 2025-06-24 21:01:54,158 instructlab.sdg.pipeline:199: Running block: flatten_auxiliary_columns
+INFO 2025-06-24 21:01:54,159 instructlab.sdg.pipeline:203: Batching disabled; processing block 'flatten_auxiliary_columns' single-threaded.
+INFO 2025-06-24 21:01:54,182 instructlab.sdg.pipeline:199: Running block: rename_to_document_column
+INFO 2025-06-24 21:01:54,182 instructlab.sdg.pipeline:203: Batching disabled; processing block 'rename_to_document_column' single-threaded.
+INFO 2025-06-24 21:01:54,186 instructlab.sdg.pipeline:199: Running block: gen_knowledge
+INFO 2025-06-24 21:01:54,187 instructlab.sdg.pipeline:203: Batching disabled; processing block 'gen_knowledge' single-threaded.
+gen_knowledge Prompt Generation: 100%|##########| 372/372 [2:37:23<00:00, 25.39s/it]  
+INFO 2025-06-24 23:39:18,097 instructlab.sdg.pipeline:199: Running block: eval_faithfulness_qa_pair
+INFO 2025-06-24 23:39:18,097 instructlab.sdg.pipeline:203: Batching disabled; processing block 'eval_faithfulness_qa_pair' single-threaded.
+eval_faithfulness_qa_pair Prompt Generation: 100%|##########| 3787/3787 [1:49:54<00:00,  1.74s/it]  
+INFO 2025-06-25 01:29:13,336 instructlab.sdg.pipeline:199: Running block: filter_faithfulness
+INFO 2025-06-25 01:29:13,336 instructlab.sdg.pipeline:203: Batching disabled; processing block 'filter_faithfulness' single-threaded.
+Map (num_proc=8): 100%|##########| 3032/3032 [00:01<00:00, 2442.38 examples/s]
+Filter (num_proc=8): 100%|##########| 3032/3032 [00:00<00:00, 8685.87 examples/s] 
+INFO 2025-06-25 01:29:15,473 instructlab.sdg.pipeline:199: Running block: eval_relevancy_qa_pair
+INFO 2025-06-25 01:29:15,473 instructlab.sdg.pipeline:203: Batching disabled; processing block 'eval_relevancy_qa_pair' single-threaded.
+eval_relevancy_qa_pair Prompt Generation: 100%|##########| 1099/1099 [37:27<00:00,  2.05s/it]
+INFO 2025-06-25 02:06:43,595 instructlab.sdg.pipeline:199: Running block: filter_relevancy
+INFO 2025-06-25 02:06:43,595 instructlab.sdg.pipeline:203: Batching disabled; processing block 'filter_relevancy' single-threaded.
+Map (num_proc=8): 100%|##########| 1099/1099 [00:00<00:00, 1600.24 examples/s]
+Filter (num_proc=8): 100%|##########| 1099/1099 [00:00<00:00, 4075.22 examples/s]
+INFO 2025-06-25 02:06:45,078 instructlab.sdg.pipeline:199: Running block: eval_verify_question
+INFO 2025-06-25 02:06:45,078 instructlab.sdg.pipeline:203: Batching disabled; processing block 'eval_verify_question' single-threaded.
+eval_verify_question Prompt Generation: 100%|##########| 1066/1066 [35:07<00:00,  1.98s/it]
+INFO 2025-06-25 02:41:52,545 instructlab.sdg.pipeline:199: Running block: filter_verify_question
+INFO 2025-06-25 02:41:52,545 instructlab.sdg.pipeline:203: Batching disabled; processing block 'filter_verify_question' single-threaded.
+Map (num_proc=8): 100%|##########| 1058/1058 [00:00<00:00, 1628.24 examples/s]
+Filter (num_proc=8): 100%|##########| 1058/1058 [00:00<00:00, 4058.59 examples/s]
+INFO 2025-06-25 02:41:54,200 instructlab.sdg.generate_data:478: Generated 984 samples
+INFO 2025-06-25 02:41:54,239 instructlab.sdg.pipeline:156: Running pipeline single-threaded
+INFO 2025-06-25 02:41:54,244 instructlab.sdg.pipeline:199: Running block: gen_mmlu_knowledge
+INFO 2025-06-25 02:41:54,244 instructlab.sdg.pipeline:203: Batching disabled; processing block 'gen_mmlu_knowledge' single-threaded.
+gen_mmlu_knowledge Prompt Generation: 100%|##########| 186/186 [15:05<00:00,  4.87s/it]
+Filter: 100%|##########| 73/73 [00:00<00:00, 17925.43 examples/s]
+Filter: 100%|##########| 61/61 [00:00<00:00, 12387.55 examples/s]
+Flattening the indices: 100%|##########| 60/60 [00:00<00:00, 13241.69 examples/s]
+Map: 100%|##########| 60/60 [00:00<00:00, 5689.51 examples/s]
+Map: 100%|##########| 60/60 [00:00<00:00, 5284.38 examples/s]
+Map: 100%|##########| 60/60 [00:00<00:00, 5247.80 examples/s]
+Filter: 100%|##########| 60/60 [00:00<00:00, 15128.24 examples/s]
+Filter: 100%|##########| 60/60 [00:00<00:00, 10065.12 examples/s]
+Filter: 100%|##########| 47/47 [00:00<00:00, 9509.06 examples/s]
+Flattening the indices: 100%|##########| 45/45 [00:00<00:00, 9542.63 examples/s]
+Casting to class labels: 100%|##########| 45/45 [00:00<00:00, 4878.61 examples/s]
+INFO 2025-06-25 02:57:00,075 instructlab.sdg.eval_data:126: Saving MMLU Dataset /var/home/cloud-user/.local/share/instructlab/datasets/2025-06-24_183543/node_datasets_2025-06-24T18_35_55/mmlubench_knowledge_telecomcorp.jsonl
+Creating json from Arrow format: 100%|##########| 1/1 [00:00<00:00, 370.91ba/s]
+INFO 2025-06-25 02:57:00,091 instructlab.sdg.eval_data:130: Saving MMLU Task yaml /var/home/cloud-user/.local/share/instructlab/datasets/2025-06-24_183543/node_datasets_2025-06-24T18_35_55/knowledge_telecomcorp_task.yaml
+Map (num_proc=8): 100%|##########| 246/246 [00:00<00:00, 281.94 examples/s]
+Creating json from Arrow format: 100%|##########| 1/1 [00:00<00:00, 73.32ba/s]
+Map (num_proc=8): 100%|##########| 186/186 [00:00<00:00, 518.23 examples/s]
+Creating json from Arrow format: 100%|##########| 1/1 [00:00<00:00, 61.67ba/s]
+Map (num_proc=8): 100%|##########| 220/220 [00:00<00:00, 644.91 examples/s]
+Creating json from Arrow format: 100%|##########| 1/1 [00:00<00:00, 126.72ba/s]
+Map: 100%|##########| 984/984 [00:00<00:00, 6121.55 examples/s]
+Map: 100%|##########| 984/984 [00:00<00:00, 25350.70 examples/s]
+Filter: 100%|##########| 984/984 [00:00<00:00, 36904.32 examples/s]
+Map: 100%|##########| 36/36 [00:00<00:00, 6060.40 examples/s]
+Map: 100%|##########| 36/36 [00:00<00:00, 10491.59 examples/s]
+Creating json from Arrow format: 100%|##########| 2/2 [00:00<00:00, 46.31ba/s]
+Map: 100%|##########| 984/984 [00:00<00:00, 6154.50 examples/s]
+Map: 100%|##########| 984/984 [00:00<00:00, 5187.15 examples/s]
+Map: 100%|##########| 984/984 [00:00<00:00, 6135.41 examples/s]
+Map: 100%|##########| 984/984 [00:00<00:00, 24802.86 examples/s]
+Filter: 100%|##########| 984/984 [00:00<00:00, 37472.94 examples/s]
+Map: 100%|##########| 36/36 [00:00<00:00, 6163.56 examples/s]
+INFO 2025-06-25 02:57:36,628 instructlab.sdg.datamixing:774: Knowledge detected to be less than 3.00% of skills (0.51%), upsampling to: 11824
+Creating json from Arrow format: 100%|##########| 3/3 [00:00<00:00, 22.99ba/s]
+INFO 2025-06-25 02:57:37,011 instructlab.sdg.datamixing:158: Loading dataset from /usr/share/instructlab/sdg/datasets/skills.jsonl ...
+INFO 2025-06-25 02:57:52,620 instructlab.sdg.datamixing:160: Dataset columns: ['messages', 'metadata', 'id']
+INFO 2025-06-25 02:57:52,620 instructlab.sdg.datamixing:161: Dataset loaded with 394141 samples
+INFO 2025-06-25 02:58:17,621 instructlab.sdg.datamixing:158: Loading dataset from /var/home/cloud-user/.local/share/instructlab/datasets/2025-06-24_183543/node_datasets_2025-06-24T18_35_55/compositional_skills_telecomcorp_troubleshooting.jsonl ...
+Generating train split: 246 examples [00:00, 20272.69 examples/s]
+INFO 2025-06-25 02:58:17,701 instructlab.sdg.datamixing:160: Dataset columns: ['task_description', 'seed_question', 'seed_response', 'leaf_node_type', 'leaf_node_path', 'question', 'response', 'id', 'messages', 'unmask']
+INFO 2025-06-25 02:58:17,701 instructlab.sdg.datamixing:161: Dataset loaded with 246 samples
+INFO 2025-06-25 02:58:17,702 instructlab.sdg.datamixing:44: Rebalancing dataset to have 30 samples ...
+Map (num_proc=8): 100%|##########| 30/30 [00:00<00:00, 101.00 examples/s]
+INFO 2025-06-25 02:58:18,337 instructlab.sdg.datamixing:158: Loading dataset from /var/home/cloud-user/.local/share/instructlab/datasets/2025-06-24_183543/node_datasets_2025-06-24T18_35_55/compositional_skills_telecomcorp_security.jsonl ...
+Generating train split: 186 examples [00:00, 17819.56 examples/s]
+INFO 2025-06-25 02:58:18,380 instructlab.sdg.datamixing:160: Dataset columns: ['task_description', 'seed_question', 'seed_response', 'leaf_node_type', 'leaf_node_path', 'question', 'response', 'id', 'messages', 'unmask']
+INFO 2025-06-25 02:58:18,380 instructlab.sdg.datamixing:161: Dataset loaded with 186 samples
+INFO 2025-06-25 02:58:18,380 instructlab.sdg.datamixing:44: Rebalancing dataset to have 30 samples ...
+Map (num_proc=8): 100%|##########| 30/30 [00:00<00:00, 97.71 examples/s]
+INFO 2025-06-25 02:58:19,034 instructlab.sdg.datamixing:158: Loading dataset from /var/home/cloud-user/.local/share/instructlab/datasets/2025-06-24_183543/node_datasets_2025-06-24T18_35_55/compositional_skills_telecomcorp_grounding.jsonl ...
+Generating train split: 220 examples [00:00, 31714.96 examples/s]
+INFO 2025-06-25 02:58:19,071 instructlab.sdg.datamixing:160: Dataset columns: ['task_description', 'seed_question', 'seed_response', 'leaf_node_type', 'leaf_node_path', 'question', 'response', 'id', 'messages', 'unmask']
+INFO 2025-06-25 02:58:19,071 instructlab.sdg.datamixing:161: Dataset loaded with 220 samples
+INFO 2025-06-25 02:58:19,071 instructlab.sdg.datamixing:44: Rebalancing dataset to have 30 samples ...
+Map (num_proc=8): 100%|##########| 30/30 [00:00<00:00, 103.19 examples/s]
+INFO 2025-06-25 02:58:19,705 instructlab.sdg.datamixing:158: Loading dataset from /var/home/cloud-user/.local/share/instructlab/datasets/2025-06-24_183543/node_datasets_2025-06-24T18_35_55/knowledge_telecomcorp_p10.jsonl ...
+Generating train split: 2004 examples [00:00, 35099.66 examples/s]
+INFO 2025-06-25 02:58:19,794 instructlab.sdg.datamixing:160: Dataset columns: ['messages', 'metadata', 'id', 'unmask']
+INFO 2025-06-25 02:58:19,794 instructlab.sdg.datamixing:161: Dataset loaded with 2004 samples
+INFO 2025-06-25 02:58:19,794 instructlab.sdg.datamixing:44: Rebalancing dataset to have 11824 samples ...
+Map (num_proc=8): 100%|##########| 11824/11824 [00:08<00:00, 1423.60 examples/s]
+Map (num_proc=8): 100%|##########| 406055/406055 [00:47<00:00, 8535.31 examples/s] 
+Creating json from Arrow format: 100%|##########| 407/407 [01:11<00:00,  5.68ba/s]
+INFO 2025-06-25 03:00:28,632 instructlab.sdg.datamixing:235: Mixed Dataset saved to /var/home/cloud-user/.local/share/instructlab/datasets/2025-06-24_183543/skills_train_msgs_2025-06-24T18_35_55.jsonl
+INFO 2025-06-25 03:00:28,955 instructlab.sdg.datamixing:158: Loading dataset from /var/home/cloud-user/.local/share/instructlab/datasets/2025-06-24_183543/node_datasets_2025-06-24T18_35_55/knowledge_telecomcorp_p07.jsonl ...
+Generating train split: 1020 examples [00:00, 82912.27 examples/s]
+INFO 2025-06-25 03:00:29,041 instructlab.sdg.datamixing:160: Dataset columns: ['messages', 'metadata', 'id', 'unmask']
+INFO 2025-06-25 03:00:29,041 instructlab.sdg.datamixing:161: Dataset loaded with 1020 samples
+Map (num_proc=8): 100%|##########| 1020/1020 [00:00<00:00, 3317.21 examples/s]
+Map (num_proc=8): 100%|##########| 1020/1020 [00:00<00:00, 3434.92 examples/s]
+Creating json from Arrow format: 100%|##########| 2/2 [00:00<00:00, 37.26ba/s]
+INFO 2025-06-25 03:00:30,392 instructlab.sdg.datamixing:235: Mixed Dataset saved to /var/home/cloud-user/.local/share/instructlab/datasets/2025-06-24_183543/knowledge_train_msgs_2025-06-24T18_35_55.jsonl
+INFO 2025-06-25 03:00:30,393 instructlab.sdg.generate_data:757: Generation took 30274.89s
+ᕦ(òᴗóˇ)ᕤ Data generate completed successfully! ᕦ(òᴗóˇ)ᕤ
